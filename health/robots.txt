@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Request-rate: 1/2
+

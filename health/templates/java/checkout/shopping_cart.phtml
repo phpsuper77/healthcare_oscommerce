@@ -1,0 +1,37 @@
+<script>
+	ShoppingCartClass = function() {
+		var self = this;
+		self.vat_exempt = '<?=$cart->haveVatExempt(); ?>';
+		
+		self.init = function() {			
+		}
+		self.init();
+		
+		$(".button-checkout, a.checkout-paypal").click(function() {			
+			if (self.vat_exempt == "1") {
+				if ("<?=$_GET['subaction'];?>" == '' && $(".vat_info_warning").find("input[type='checkbox']").is(":checked")) {
+					alert('You have indicated you are a VAT Exempt customer.  To continue you must complete a VAT Exempt form by clicking the VAT form link.');
+					return(false);
+				}
+			}
+			return(true);
+		});
+		
+		$(".vat_info_warning").find("input[type='checkbox']").change(function() {
+			if (!$(this).is(':checked')) {
+				$("td.vat_exempt").find("select").val("0");
+				$("form[name='cart_quantity']").submit();
+			}
+		});
+		
+		$("#cart select[name='country_id']").change(function() {
+			$("a.link-recalculate").trigger("click");
+		});
+		
+		
+	}
+	
+	$(document).ready(function() {	
+		var shoppingCart = new ShoppingCartClass();
+	});
+</script>

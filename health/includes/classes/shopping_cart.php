@@ -1,0 +1,796 @@
+<?php
+/*
+$Id: shopping_cart.php,v 1.1.1.1 2005/12/03 21:36:11 max Exp $
+
+osCommerce, Open Source E-Commerce Solutions
+http://www.oscommerce.com
+
+Copyright (c) 2003 osCommerce
+
+Released under the GNU General Public License
+*/
+ 
+class shoppingCart {
+  var $contents, $total, $weight, $cartID, $content_type;
+  var $giveaway; // separated storage for GA products
+
+  function shoppingCart() {
+    $this->reset();
+  }
+
+  function restore_contents() {  
+   global $customer_id, $gv_id, $REMOTE_ADDR, $vat_exemption_arr;
+
+    if (!tep_session_is_registered('customer_id')) return false;
+                                    
+    // insert current cart contents in database
+    if (is_array($this->contents)) {  
+      reset($this->contents);
+      while (list($products_id, ) = each($this->contents)) {
+        $qty = (int)$this->contents[$products_id]['qty'];
+        $product_query = tep_db_query("select products_id from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'"); 
+        if (!tep_db_num_rows($product_query)) {
+          tep_db_query("insert into " . TABLE_CUSTOMERS_BASKET . " (customers_id, products_id, customers_basket_quantity, customers_basket_date_added, vat_exemption) values ('" . (int)$customer_id . "', '" . tep_db_input($products_id) . "', '" . $qty . "', '" . date('Ymd') . "', '" . $vat_exemption_arr[tep_db_input($products_id)] . "')");
+          if (isset($this->contents[$products_id]['attributes'])) {
+            reset($this->contents[$products_id]['attributes']);
+            while (list($option, $value) = each($this->contents[$products_id]['attributes'])) {
+              tep_db_query("insert into " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " (customers_id, products_id, products_options_id, products_options_value_id) values ('" . (int)$customer_id . "', '" . tep_db_input($products_id) . "', '" . tep_db_input($option) . "', '" . (int)$value . "')");
+            }
+          }
+        } else {
+          tep_db_query("update " . TABLE_CUSTOMERS_BASKET . " set customers_basket_quantity = customers_basket_quantity + " . $qty . ((int)$vat_exemption_arr[tep_db_input($products_id)]>0?", vat_exemption = '" . $vat_exemption_arr[tep_db_input($products_id)] . "'":"") . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+        }
+      }
+      //ICW ADDDED FOR CREDIT CLASS GV - START
+      if (tep_session_is_registered('gv_id')) {
+        $gv_query = tep_db_query("insert into  " . TABLE_COUPON_REDEEM_TRACK . " (coupon_id, customer_id, redeem_date, redeem_ip) values ('" . (int)$gv_id . "', '" . (int)$customer_id . "', now(),'" . tep_db_input($REMOTE_ADDR) . "')");
+        tep_gv_account_update($customer_id, $gv_id);
+        $gv_update = tep_db_query("update " . TABLE_COUPONS . " set coupon_active = 'N' where coupon_id = '" . (int)$gv_id . "'");
+        tep_session_unregister('gv_id');
+      }
+      //ICW ADDDED FOR CREDIT CLASS GV - END
+    }
+    
+    // recreate GA products
+    if (sizeof($this->giveaway) > 0)
+    {
+      tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and is_giveaway = 1"); // delete old GA
+      // insert new GA into DB
+      foreach($this->giveaway as $products_id => $giveaway)
+      {
+        tep_db_query("insert into " . TABLE_CUSTOMERS_BASKET . " (customers_id, products_id, customers_basket_quantity, customers_basket_date_added, is_giveaway) values ('" . (int)$customer_id . "', '" . tep_db_input($products_id) . "', '" . $giveaway['qty'] . "', '" . date('Ymd') . "', '1')");
+      }
+    }
+
+    // reset per-session cart contents, but not the database contents
+    $this->reset(false);
+
+    $products_query = tep_db_query("select products_id, customers_basket_quantity, vat_exemption from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and is_giveaway = 0"); // select only ordinary products
+    while ($products = tep_db_fetch_array($products_query)) {
+    
+      // VAT exemption
+      if(!tep_session_is_registered('vat_exemption_arr'))
+      tep_session_register('vat_exemption_arr');
+      $vat_exemption_arr[$products['products_id']] = ((int)$products['vat_exemption']>0?1:'');
+      // end VAT exemption
+      
+      $this->contents[$products['products_id']] = array('qty' => $products['customers_basket_quantity']);
+      // attributes
+      $attributes_query = tep_db_query("select products_options_id, products_options_value_id from " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products['products_id']) . "'");
+      while ($attributes = tep_db_fetch_array($attributes_query)) {
+        $this->contents[$products['products_id']]['attributes'][$attributes['products_options_id']] = $attributes['products_options_value_id'];
+      }
+    }
+    
+    // recreate session GA
+    $ga_query = tep_db_query("select products_id, customers_basket_quantity from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and is_giveaway = 1");
+    while($d = tep_db_fetch_array($ga_query))
+    {
+      $this->giveaway[$d['products_id']] = array('qty' => $d['customers_basket_quantity']);
+    }
+    
+    $this->cleanup();
+  }
+
+  function reset($reset_database = false) {
+    global $customer_id, $vat_exemption_arr;
+
+    $this->contents = array();
+    $this->giveaway = array();
+    $this->total = 0;
+    $this->weight = 0;
+    $this->content_type = false;
+    unset($this->products_array);
+    $vat_exemption_arr = array();
+
+    if (tep_session_is_registered('customer_id') && ($reset_database == true)) {
+      tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "'");
+      tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " where customers_id = '" . (int)$customer_id . "'");
+    }
+
+    unset($this->cartID);
+    if (tep_session_is_registered('cartID')) tep_session_unregister('cartID');
+  }
+
+  function add_cart($products_id, $qty = '1', $attributes = '', $notify = true, $ga = 0, $vat_exempt = 0) {
+    global $new_products_id_in_cart, $customer_id;
+    unset($this->products_array);
+    $this->total_virtual = 0;
+    $this->total = 0;
+    $this->weight = 0;
+    
+// {{
+    if ($ga == 1) // product added as GA, check it
+    {
+      if (is_giveaway($products_id)) // only GA can be added as GA
+      {
+        if (sizeof($this->giveaway) > 0) // only one GA allowed
+        {
+          unset($this->giveaway);
+        }
+        $this->giveaway[$products_id] = array('qty' => $qty);
+        if ($customer_id > 0) // update database
+        {
+          tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET . " where customers_id='" . (int)$customer_id . "' and is_giveaway=1");
+          tep_db_query("insert into " . TABLE_CUSTOMERS_BASKET . " (customers_id, products_id, customers_basket_quantity, customers_basket_date_added, is_giveaway, vat_exemption) values ('" . (int)$customer_id . "', '" . tep_db_input($products_id) . "', '" . $qty . "', '" . date('Ymd') . "', '1', '" . $vat_exempt . "')");
+        }
+      }
+    }
+    else // ordinary product
+    {
+// }}
+    $qty = intval($qty);
+    $products_id = tep_get_uprid($products_id, $attributes);
+    if ($notify == true) {
+      $new_products_id_in_cart = $products_id;
+      tep_session_register('new_products_id_in_cart');
+    }
+    
+    if ($this->in_cart($products_id) && ($ga != 1)) { 
+      $this->update_quantity($products_id, $qty, $attributes);
+    } else {
+//      $this->contents[] = array($products_id);
+      $this->contents[$products_id] = array('qty' => $qty);
+      // insert into database
+      if (tep_session_is_registered('customer_id')) tep_db_query("insert into " . TABLE_CUSTOMERS_BASKET . " (customers_id, products_id, customers_basket_quantity, customers_basket_date_added, vat_exemption) values ('" . (int)$customer_id . "', '" . tep_db_input($products_id) . "', '" . $qty . "', '" . date('Ymd') . "', '" . $vat_exempt . "')");
+
+      if (is_array($attributes)) {
+        reset($attributes);
+        while (list($option, $value) = each($attributes)) {
+          $this->contents[$products_id]['attributes'][$option] = $value;
+          // insert into database
+          if (tep_session_is_registered('customer_id')) tep_db_query("insert into " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " (customers_id, products_id, products_options_id, products_options_value_id) values ('" . (int)$customer_id . "', '" . tep_db_input($products_id) . "', '" . tep_db_input($option) . "', '" . (int)$value . "')");
+        }
+      }
+    }
+// {{
+    } // end if ($ga == 1) else
+// }}
+    $this->cleanup();
+
+    // assign a temporary unique ID to the order contents to prevent hack attempts during the checkout procedure
+    $this->cartID = $this->generate_cart_id();
+
+    $this->check_giveaway();
+  }
+
+  function update_quantity($products_id, $quantity = '', $attributes = '') {
+    global $customer_id;
+
+    if (empty($quantity)) return true; // nothing needs to be updated if theres no quantity, so we return true..
+    $quantity = intval($quantity);
+    $this->contents[$products_id] = array('qty' => $quantity);
+    // update database
+    if (tep_session_is_registered('customer_id')) tep_db_query("update " . TABLE_CUSTOMERS_BASKET . " set customers_basket_quantity = '" . $quantity . "' where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+
+    if (is_array($attributes)) {
+      reset($attributes);
+      while (list($option, $value) = each($attributes)) {
+        $this->contents[$products_id]['attributes'][$option] = $value;
+        // update database
+        if (tep_session_is_registered('customer_id')) tep_db_query("update " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " set products_options_value_id = '" . (int)$value . "' where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "' and products_options_id = '" . tep_db_input($option) . "'");
+      }
+    }
+
+    $this->check_giveaway();
+  }
+
+  function cleanup() {
+    global $customer_id;
+
+    reset($this->contents);
+    unset($this->products_array);
+    $this->total_virtual = 0;
+    $this->total = 0;
+    $this->weight = 0;
+
+    while (list($key,) = each($this->contents)) {
+      if ($this->contents[$key]['qty'] < 1) {
+        unset($this->contents[$key]);
+        // remove from database
+        if (tep_session_is_registered('customer_id')) {
+          tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($key) . "'");
+          tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($key) . "'");
+        }
+      }
+    }
+  }
+
+  function count_contents() {  // get total number of items in cart
+    $total_items = 0;
+    if (is_array($this->contents)) {
+      reset($this->contents);
+      while (list($products_id, ) = each($this->contents)) {
+        $total_items += $this->get_quantity($products_id);
+      }
+    }
+
+    // GA
+    if (is_array($this->giveaway))
+    {
+      foreach ($this->giveaway as $giveaway)
+      {
+        $total_items += $giveaway['qty'];
+      }
+    }
+    return $total_items;
+  }
+
+  function get_quantity($products_id, $ga = 0) {
+    if ($ga == 1)
+    {
+      if (isset($this->giveaway[$products_id])) {
+        return $this->giveaway[$products_id]['qty'];
+      } else {
+        return 0;
+      }
+    }
+    else
+    {
+      if (isset($this->contents[$products_id])) {
+        return $this->contents[$products_id]['qty'];
+      } else {
+        return 0;
+      }
+    }
+  }
+
+  function in_cart($products_id) {
+    if (isset($this->contents[$products_id])) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function in_giveaway($products_id) {
+    if (isset($this->giveaway[$products_id])) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function remove($products_id) {
+    global $customer_id, $vat_exemption_arr;
+
+    unset($this->contents[$products_id]);
+    unset($vat_exemption_arr[$products_id]);
+    // remove from database
+    if (tep_session_is_registered('customer_id')) {
+      tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+      tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+    }
+
+    // assign a temporary unique ID to the order contents to prevent hack attempts during the checkout procedure
+    $this->cartID = $this->generate_cart_id();
+
+    $this->check_giveaway();
+  }
+
+  function remove_giveaway($products_id) {
+    global $customer_id;
+    unset($this->giveaway[$products_id]);
+    // remove from database
+    if (tep_session_is_registered('customer_id')) {
+      tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+      tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+    }
+    // assign a temporary unique ID to the order contents to prevent hack attempts during the checkout procedure
+    $this->cartID = $this->generate_cart_id();
+  }
+
+  function remove_all() {
+    $this->reset();
+  }
+
+  function get_product_id_list() {
+    $product_id_list = '';
+    if (is_array($this->contents)) {
+      reset($this->contents);
+      while (list($products_id, ) = each($this->contents)) {
+        $product_id_list .= ', ' . $products_id;
+      }
+    }
+
+    return substr($product_id_list, 2);
+  }
+
+  function calculate() {
+    /*
+    if ($this->total != 0){
+      return;
+    }
+    */
+    $this->total_virtual = 0;
+    $this->total = 0;
+    $this->weight = 0;
+    if (!is_array($this->contents)) return 0;
+
+    reset($this->contents); global $customer_id;
+    while (list($products_id, ) = each($this->contents)) {
+      $qty = $this->contents[$products_id]['qty'];
+
+      // products price
+      $product_query = tep_db_query("select products_id, products_price, products_tax_class_id, products_weight, products_file from " . TABLE_PRODUCTS . " where products_id = '" . (int)$products_id . "'");
+      if ($product = tep_db_fetch_array($product_query)) {
+        // ICW ORDER TOTAL CREDIT CLASS Start Amendment
+        $no_count = 1;
+        $gv_query = tep_db_query("select products_model from " . TABLE_PRODUCTS . " where products_id = '" . (int)$products_id . "'");
+        $gv_result = tep_db_fetch_array($gv_query);
+        if (ereg('^GIFT', $gv_result['products_model'])) {
+          $no_count = 0;
+        }
+        // ICW ORDER TOTAL  CREDIT CLASS End Amendment
+        $prid = $product['products_id'];
+        $products_tax = tep_get_tax_rate($product['products_tax_class_id']);
+        
+        // VAT exemption
+        global $vat_exemption_arr;
+        if($vat_exemption_arr[$product['products_id']]==1)$products_tax = 0;
+        if (tep_session_is_registered('customer_id') && (int)$customer_id > 0)
+        {
+          tep_db_query("update " . TABLE_CUSTOMERS_BASKET . " set vat_exemption = '" . $vat_exemption_arr[$product['products_id']] . "' where customers_id = '" . (int)$customer_id . "' and products_id = '" . $product['products_id'] . "'");
+        }
+        // end VAT exemption
+        
+        $products_price = tep_get_products_price($product['products_id'], $qty, $product['products_price']);
+
+        if ($product['products_file'] == '') {
+// {{ Products Bundle Sets
+          if (PRODUCTS_BUNDLE_SETS == 'True')
+          {
+            global $customer_groups_id, $currency_id;
+            $bundle_sets_query = tep_db_query("select p.products_id, sp.num_product from " . TABLE_PRODUCTS . " p left join " . TABLE_PRODUCTS_PRICES . " pgp on p.products_id = pgp.products_id and pgp.groups_id = '" . (int)$customer_groups_id . "' and pgp.currencies_id = '" . (int)(USE_MARKET_PRICES == 'True' ? $currency_id : 0) . "', " . TABLE_SETS_PRODUCTS . " sp where sp.product_id = p.products_id and sp.sets_id = '" . (int)$prid . "' and p.products_status = '1' and if(pgp.products_group_price is null, 1, pgp.products_group_price != -1 ) order by sp.sort_order");
+            if (tep_db_num_rows($bundle_sets_query) > 0)
+            {
+              $products_weight = 0;
+              while ($bundle_sets = tep_db_fetch_array($bundle_sets_query))
+              {
+                $products_weight += tep_get_products_weight($bundle_sets['products_id']) * $bundle_sets['num_product'];
+              }
+            }
+            else $products_weight = $product['products_weight'];
+          }
+          else
+// }}
+          $products_weight = $product['products_weight'];
+        } else {
+          $products_weight = 0;
+        }
+
+        $special_price = tep_get_products_special_price($prid, $qty);
+        if ($special_price && $special_price !== false) {
+          $products_price = $special_price;
+        }
+        $this->total_virtual += tep_add_tax($products_price, $products_tax) * $qty * $no_count;// ICW CREDIT CLASS;
+        $this->weight_virtual += ($qty * $products_weight) * $no_count;// ICW CREDIT CLASS;
+        //$this->total += tep_add_tax($products_price * $qty, $products_tax);
+        $this->weight += ($qty * $products_weight);
+      }
+
+      // attributes price
+      $attributes_total = 0;
+      if (isset($this->contents[$products_id]['attributes'])) {
+        reset($this->contents[$products_id]['attributes']);
+        while (list($option, $value) = each($this->contents[$products_id]['attributes'])) {
+// {{ Products Bundle Sets
+          $option_arr = split('-', $option);
+// }}
+          $attribute_price_query = tep_db_query("select products_attributes_id, options_values_price, price_prefix, products_attributes_weight, products_attributes_weight_prefix from " . TABLE_PRODUCTS_ATTRIBUTES . " where products_id = '" . (int)($option_arr[1] > 0 ? $option_arr[1] : $prid) . "' and options_id = '" . (int)$option_arr[0] . "' and options_values_id = '" . (int)$value . "'");
+          $attribute_price = tep_db_fetch_array($attribute_price_query);
+          $attribute_price['options_values_price'] = tep_get_options_values_price($attribute_price['products_attributes_id'], $qty);
+          if (tep_not_null($attribute_price['products_attributes_weight'])){
+            if ($attribute_price['products_attributes_weight_prefix'] == '+' || $attribute_price['products_attributes_weight_prefix'] == ''){
+              $this->weight += $qty * $attribute_price['products_attributes_weight'];
+            }else{
+              $this->weight -= $qty * $attribute_price['products_attributes_weight'];
+            }
+          }
+          if ($attribute_price['price_prefix'] == '+' || $attribute_price['price_prefix'] == '') {
+            $attributes_total += $attribute_price['options_values_price'];
+          } else {
+            $attributes_total -= $attribute_price['options_values_price'];
+          }
+        }
+        //$this->total += tep_add_tax($attributes_total * $qty, $products_tax);
+      }
+      $this->total += tep_add_tax(($products_price + $attributes_total) * $qty, $products_tax) ;
+    }
+  }
+
+  function attributes_price($products_id, $qty = 1) {
+    $attributes_price = 0;
+
+    if (isset($this->contents[$products_id]['attributes'])) {
+      reset($this->contents[$products_id]['attributes']);
+      while (list($option, $value) = each($this->contents[$products_id]['attributes'])) {
+// {{ Products Bundle Sets
+        $option_arr = split('-', $option);
+// }}
+        $attribute_price_query = tep_db_query("select products_attributes_id, options_values_price, price_prefix from " . TABLE_PRODUCTS_ATTRIBUTES . " where products_id = '" . (int)($option_arr[1] > 0 ? $option_arr[1] : $products_id) . "' and options_id = '" . (int)$option_arr[0] . "' and options_values_id = '" . (int)$value . "'");
+        $attribute_price = tep_db_fetch_array($attribute_price_query);
+        $attribute_price['options_values_price'] = tep_get_options_values_price($attribute_price['products_attributes_id'], $qty);
+        if ($attribute_price['price_prefix'] == '+' || $attribute_price['price_prefix'] == '') {
+          $attributes_price += $attribute_price['options_values_price'];
+        } else {
+          $attributes_price -= $attribute_price['options_values_price'];
+        }
+      }
+    }
+    return $attributes_price;
+  }
+
+  function attributes_weight($products_id) {
+    $attributes_weight = 0;
+
+    if (isset($this->contents[$products_id]['attributes'])) {
+      reset($this->contents[$products_id]['attributes']);
+      while (list($option, $value) = each($this->contents[$products_id]['attributes'])) {
+// {{ Products Bundle Sets
+        $option_arr = split('-', $option);
+// }}
+        $attribute_weight_query = tep_db_query("select products_attributes_id, products_attributes_weight, products_attributes_weight_prefix from " . TABLE_PRODUCTS_ATTRIBUTES . " where products_id = '" . (int)($option_arr[1] > 0 ? $option_arr[1] : $products_id) . "' and options_id = '" . (int)$option_arr[0] . "' and options_values_id = '" . (int)$value . "'");
+        $attribute_weight = tep_db_fetch_array($attribute_weight_query);
+        if ($attribute_weight['products_attributes_weight_prefix'] == '+' || $attribute_weight['products_attributes_weight_prefix'] == '') {
+          $attributes_weight += $attribute_weight['products_attributes_weight'];
+        } else {
+          $attributes_weight -= $attribute_weight['products_attributes_weight'];
+        }
+      }
+    }
+    return $attributes_weight;
+  }
+
+  function get_products() {
+    global $languages_id, $HTTP_SESSION_VARS;
+    /*
+    if (is_array($this->products_array)){
+      return $this->products_array;
+    }
+    */
+
+    if (!is_array($this->contents)) return false;
+	  
+	$products_array = array();
+    reset($this->contents);
+
+	  while (list($products_id,) = each($this->contents)) {
+      $products_query = tep_db_query("select p.products_id, if(length(pd1.products_name), pd1.products_name, pd.products_name) as products_name, p.products_model, p.products_image, p.products_price, p.products_weight, p.products_tax_class_id, p.products_file from " . TABLE_PRODUCTS_DESCRIPTION . " pd, " . TABLE_PRODUCTS . " p left join " . TABLE_PRODUCTS_DESCRIPTION . " pd1 on pd1.products_id = p.products_id and pd1.language_id='" . (int)$languages_id ."' and pd1.affiliate_id = '" . (int)$HTTP_SESSION_VARS['affiliate_ref'] . "' where p.products_id = '" . (int)$products_id . "' and pd.affiliate_id = 0 and pd.products_id = p.products_id and pd.language_id = '" . (int)$languages_id . "'");
+      if ($products = tep_db_fetch_array($products_query)) {
+        $prid = $products['products_id'];
+        $products_price = tep_get_products_price($products['products_id'], $this->contents[$products_id]['qty'], $products['products_price']);
+
+        $special_price = tep_get_products_special_price($prid, $this->contents[$products_id]['qty']);
+        if ($special_price !== false) {
+          $products_price = $special_price;
+        }
+
+        // inventory
+        if (PRODUCTS_INVENTORY == 'True') {
+          $r = tep_db_query("select products_model from " . TABLE_INVENTORY . " where products_id='" . normalize_id($products_id) . "'");
+          if ($inventory = tep_db_fetch_array($r)) {
+            if ($inventory['products_model']){
+              $products['products_model'] = $inventory['products_model'];
+            }
+          }
+        }
+        // inventory eof
+
+// {{ Products Bundle Sets
+        if (PRODUCTS_BUNDLE_SETS == 'True')
+        {
+          global $customer_groups_id, $currency_id;
+          $bundle_sets_query = tep_db_query("select p.products_id, sp.num_product from " . TABLE_PRODUCTS . " p left join " . TABLE_PRODUCTS_PRICES . " pgp on p.products_id = pgp.products_id and pgp.groups_id = '" . (int)$customer_groups_id . "' and pgp.currencies_id = '" . (int)(USE_MARKET_PRICES == 'True' ? $currency_id : 0) . "', " . TABLE_SETS_PRODUCTS . " sp where sp.product_id = p.products_id and sp.sets_id = '" . (int)$products_id . "' and p.products_status = '1' and if(pgp.products_group_price is null, 1, pgp.products_group_price != -1 ) order by sp.sort_order");
+          if (tep_db_num_rows($bundle_sets_query) > 0)
+          {
+            $products['products_weight'] = 0;
+            while ($bundle_sets = tep_db_fetch_array($bundle_sets_query))
+            {
+              $products['products_weight'] += tep_get_products_weight($bundle_sets['products_id']) * $bundle_sets['num_product'];
+            }
+          }
+        }
+// }}
+
+        // VAT exemption
+        global $vat_exemption_arr;
+        if($vat_exemption_arr[$products['products_id']]==1)$products['products_tax_class_id'] = '';
+        // end VAT exemption
+
+        $products_array[] = array('id' => $products_id,
+        'name' => $products['products_name'],
+        'model' => $products['products_model'],
+        'image' => $products['products_image'],
+        'price' => $products_price,
+        'products_file' => $products['products_file'],
+        'ga' => 0,
+        'quantity' => $this->contents[$products_id]['qty'],
+        'weight' => ($products['products_weight'] + $this->attributes_weight($products_id)),
+        'final_price' => ($products_price + $this->attributes_price($products_id, $this->contents[$products_id]['qty'])),
+        'tax_class_id' => $products['products_tax_class_id'],
+        'attributes' => (isset($this->contents[$products_id]['attributes']) ? $this->contents[$products_id]['attributes'] : ''));
+      }
+    }
+
+    if (sizeof($this->giveaway) > 0) // if we also have GA add them too
+    {
+      foreach ($this->giveaway as $products_id => $product)
+      {
+        $products = tep_db_fetch_array(tep_db_query("select p.products_id, pd.products_name, p.products_model, p.products_image, p.products_price, p.products_weight, p.products_tax_class_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . (int)$products_id . "' and pd.products_id = p.products_id and pd.language_id = '" . (int)$languages_id . "' and pd.affiliate_id = 0"));
+        $products_array[] = array('id' => $products_id,
+        'name' => $products['products_name'],
+        'model' => $products['products_model'],
+        'image' => $products['products_image'],
+        'price' => 0,
+        'ga' => 1,
+        'quantity' => $product['qty'],
+        'weight' => $products['products_weight'],
+        'final_price' => 0,
+        'tax_class_id' => $products['products_tax_class_id'],
+        'attributes' => (isset($product['attributes']) ? $product['attributes'] : ''));
+      }
+    }
+
+    $this->products_array = $products_array;
+
+    return $products_array;
+  }
+
+  function show_total() {
+    $this->calculate();
+
+    return $this->total;
+  }
+
+  function show_weight() {
+    $this->calculate();
+
+    return $this->weight;
+  }
+  // CREDIT CLASS Start Amendment
+  function show_total_virtual() {
+    $this->calculate();
+
+    return $this->total_virtual;
+  }
+
+  function show_weight_virtual() {
+    $this->calculate();
+
+    return $this->weight_virtual;
+  }
+  // CREDIT CLASS End Amendment
+
+  function generate_cart_id($length = 5) {
+    return tep_create_random_value($length, 'digits');
+  }
+
+  function get_content_type() {
+    $this->content_type = false;
+
+    if ( (DOWNLOAD_ENABLED == 'true') && ($this->count_contents() > 0) ) {
+      reset($this->contents);
+      while (list($products_id, ) = each($this->contents)) {
+        if (isset($this->contents[$products_id]['attributes'])) {
+
+          $virtual_check_product_query = tep_db_query("select products_weight, products_file from " . TABLE_PRODUCTS . " where products_id = '" . (int)$products_id . "'");
+          $virtual_check_product = tep_db_fetch_array($virtual_check_product_query);
+
+          reset($this->contents[$products_id]['attributes']);
+          while (list($option, $value) = each($this->contents[$products_id]['attributes'])) {
+// {{ Products Bundle Sets
+            $option_arr = split('-', $option);
+// }}
+            $virtual_check_query = tep_db_query("select count(*) as total from " . TABLE_PRODUCTS_ATTRIBUTES . "  where products_id = '" . (int)($option_arr[1] > 0 ? $option_arr[1] : $products_id) . "' and options_values_id = '" . (int)$value . "' and products_attributes_filename <> ''");
+            $virtual_check = tep_db_fetch_array($virtual_check_query);
+
+            if ($virtual_check['total'] > 0 || $virtual_check_product['products_file'] != '') {
+              switch ($this->content_type) {
+                case 'physical':
+                $this->content_type = 'mixed';
+
+                return $this->content_type;
+                break;
+                default:
+                $this->content_type = 'virtual';
+                break;
+              }
+            } else {
+              switch ($this->content_type) {
+                case 'virtual':
+                $this->content_type = 'mixed';
+
+                return $this->content_type;
+                break;
+                default:
+                $this->content_type = 'physical';
+                break;
+              }
+            }
+          }
+          // ICW ADDED CREDIT CLASS - Begin
+        } elseif ($this->show_weight() == 0) {
+          reset($this->contents);
+          while (list($products_id, ) = each($this->contents)) {
+            $virtual_check_query = tep_db_query("select products_weight, products_file from " . TABLE_PRODUCTS . " where products_id = '" . (int)$products_id . "'");
+            $virtual_check = tep_db_fetch_array($virtual_check_query);
+            if ($virtual_check['products_file'] != ''){
+              $virtual_check['products_weight'] = 0;
+            }
+            if ($virtual_check['products_weight'] == 0) {
+              switch ($this->content_type) {
+                case 'physical':
+                $this->content_type = 'mixed';
+
+                return $this->content_type;
+                break;
+                default:
+                $this->content_type = 'virtual';
+                break;
+              }
+            } else {
+              switch ($this->content_type) {
+                case 'virtual':
+                $this->content_type = 'mixed';
+
+                return $this->content_type;
+                break;
+                default:
+                $this->content_type = 'physical';
+                break;
+              }
+            }
+          }
+          // ICW ADDED CREDIT CLASS - End
+        } else {
+          switch ($this->content_type) {
+            case 'virtual':
+            $this->content_type = 'mixed';
+            return $this->content_type;
+            break;
+            default:
+            $this->content_type = 'physical';
+            break;
+          }
+        }
+      }
+
+    } elseif ($this->count_contents() > 0) { // GIFT addon by Senia 2008-04-21
+      $this->show_weight();
+      if (is_array($this->products_array) && sizeof($this->products_array) > 0) {
+        $total_virtual = 0;
+        foreach($this->products_array as $pdata) {
+          if (ereg('^GIFT', $pdata['model'])) {
+            $total_virtual++;
+          }
+        }
+      }
+
+      if ($total_virtual > 0 && $total_virtual == sizeof($this->products_array)) {
+        $this->content_type = 'virtual';
+      } elseif ($total_virtual > 0) {
+        $this->content_type = 'mixed';
+      } else {
+        $this->content_type = 'physical';
+      }
+
+    } else {
+      $this->content_type = 'physical';
+    }
+
+    return $this->content_type;
+  }
+
+  function unserialize($broken) {
+    for(reset($broken);$kv=each($broken);) {
+      $key=$kv['key'];
+      if (gettype($this->$key)!="user function")
+      $this->$key=$kv['value'];
+    }
+  }
+
+  // ------------------------ ICW CREDIT CLASS Gift Voucher Addittion-------------------------------Start
+  // amend count_contents to show nil contents for shipping
+  // as we don't want to quote for 'virtual' item
+  // GLOBAL CONSTANTS if NO_COUNT_ZERO_WEIGHT is true then we don't count any product with a weight
+  // which is less than or equal to MINIMUM_WEIGHT
+  // otherwise we just don't count gift certificates
+
+  function count_contents_virtual() {  // get total number of items in cart disregard gift vouchers
+  $total_items = 0;
+  if (is_array($this->contents)) {
+    reset($this->contents);
+    while (list($products_id, ) = each($this->contents)) {
+      $no_count = false;
+      $gv_query = tep_db_query("select products_model from " . TABLE_PRODUCTS . " where products_id = '" . (int)$products_id . "'");
+      $gv_result = tep_db_fetch_array($gv_query);
+      if (ereg('^GIFT', $gv_result['products_model'])) {
+        $no_count=true;
+      }
+      if (NO_COUNT_ZERO_WEIGHT == 1) {
+        $gv_query = tep_db_query("select products_weight from " . TABLE_PRODUCTS . " where products_id = '" . tep_get_prid($products_id) . "'");
+        $gv_result=tep_db_fetch_array($gv_query);
+        if ($gv_result['products_weight']<=MINIMUM_WEIGHT) {
+          $no_count=true;
+        }
+      }
+      if (!$no_count) $total_items += $this->get_quantity($products_id);
+    }
+  }
+  return $total_items;
+  }
+  // ------------------------ ICW CREDIT CLASS Gift Voucher Addittion-------------------------------End
+
+  function check_giveaway() {
+    global $customer_id;
+    if (is_array($this->giveaway))
+    {
+      foreach ($this->giveaway as $products_id => $giveaway)
+      {
+        $max_price = tep_db_fetch_array(tep_db_query("select shopping_cart_price as price from " . TABLE_GIVE_AWAY_PRODUCTS . " where products_id = '" . $products_id . "'"));
+        $max_price = $max_price['price'];
+        if ($max_price > $this->show_total()) { // remove this give away product
+          unset($this->giveaway[$products_id]);
+          if ($customer_id > 0) {
+            tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+            tep_db_query("delete from " . TABLE_CUSTOMERS_BASKET_ATTRIBUTES . " where customers_id = '" . (int)$customer_id . "' and products_id = '" . tep_db_input($products_id) . "'");
+          }
+        }
+      }
+    }
+  }
+  
+  function haveVatExempt(){
+   global $vat_exemption_arr;
+   
+    $ret = false;
+     if (is_array($this->contents)) foreach( $this->contents as $uprid=>$info ){
+    
+     //$vat_exempt_flag = tep_db_fetch_array(tep_db_query("select vat_exempt_flag from " . TABLE_PRODUCTS . " where products_id = '" . (int)$uprid . "'"));                                                      
+    
+     if((int)$vat_exemption_arr[(int)$uprid]==1){$ret = true; break;} 
+      
+      /*$vat_exempt_flag = tep_db_fetch_array(tep_db_query("select vat_exempt_flag from " . TABLE_PRODUCTS . " where products_id = '" . (int)$uprid . "'"));
+      if ( (int)$vat_exempt_flag['vat_exempt_flag']==1 ) {
+        $ret = true;
+        break;
+      }*/
+    }
+    return $ret;
+  }
+
+	public function updateCart() {
+
+	}
+
+	public function removeVatExempt() {
+		foreach($_SESSION['vat_exemption_arr'] as $key=>&$value) {
+			$value = 0;
+		}
+	}
+
+
+
+}
+?>

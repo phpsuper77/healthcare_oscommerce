@@ -1,0 +1,8 @@
+admin/data.php
+admin/includes/boxes/catalog.php
+admin/includes/filenames.php
+admin/includes/languages/english/data.php
+admin/includes/languages/english.php
+datafeeds/.htaccess
+templates/content/checkout_confirmation.tpl.php
+templates/Original/footer.php

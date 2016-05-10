@@ -1,0 +1,45 @@
+<script>
+	CheckoutClass = function() {
+		var self = this;
+		
+		self.init = function() {
+			$("input[name='ship_as_bill']").attr("checked", "checked");
+			$(".shipping-address").hide();
+		}
+		self.init();
+		
+		$("input[title=' Continue ']").click(function() {
+			if ($("input[name='ship_as_bill']").is(':checked')) {
+				$("input[name='ship_firstname']").val($("input[name='firstname']").val());
+				$("input[name='ship_lastname']").val($("input[name='lastname']").val());
+				$("input[name='ship_street_address_line1']").val($("input[name='street_address_line1']").val());
+				$("input[name='ship_street_address_line2']").val($("input[name='street_address_line2']").val());
+				$("input[name='ship_postcode']").val($("input[name='postcode']").val());
+				$("input[name='ship_city']").val($("input[name='city']").val());
+				$("input[name='ship_state']").val($("input[name='state']").val());
+				$("select[name='ship_country']").val($("select[name='country']").val());
+			}
+			return(true);
+		});
+		
+		$("select[name='country']").change(function() {
+			if ($("input[name='ship_as_bill']").is(':checked')) {
+				$("select[name='ship_country']").val($(this).val());
+				$("select[name='ship_country']").trigger('change');
+			} else {
+				//$(".shipping-address").show();
+			}			
+		});
+		
+		$("input[name='ship_as_bill']").change(function() {
+			if ($("input[name='ship_as_bill']").is(':checked')) {
+				$(".shipping-address").hide();
+			} else {
+				$(".shipping-address").show();
+			}
+		});
+		
+		
+	}
+	var checkout = new CheckoutClass();
+</script>

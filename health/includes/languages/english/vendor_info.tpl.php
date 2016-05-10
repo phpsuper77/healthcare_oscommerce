@@ -1,0 +1,1 @@
+Test vendor info page.asdasd

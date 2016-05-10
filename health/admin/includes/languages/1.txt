@@ -1,0 +1,175 @@
+/var/www/html/loaded/admin/includes/languages/english/invoice.php <=> /var/www/html/loaded/admin/includes/languages/german/invoice.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/invoice.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/invoice.php:
+define('TITLE_PRINT_ORDER', 'Print Order #: ');
+
+
+/var/www/html/loaded/admin/includes/languages/english/gv_mail.php <=> /var/www/html/loaded/admin/includes/languages/german/gv_mail.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/gv_mail.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/gv_mail.php:
+define('TEXT_SINGLE_EMAIL', '<span class="smallText">Use this for sending single emails, otherwise use dropdown above</span>');
+define('TEXT_EMAIL_BUTTON_TEXT', '<p><HR><b><font color="red">The Back Button has been DISABLE while HTML WYSIWG Editor is turned ON,</b></font> WHY? - Because if you click the back button to edit your HTML email, The PHP (php.ini - "Magic Quotes = On") will automatically add "\\\\\\\" backslashes everywhere Double Quotes " appear (HTML uses them in Links, Images and More) and this destorts the HTML and the pictures will dissapear once you submit the email again, If you turn OFF WYSIWYG Editor in Admin the HTML Ability of osCommerce is also turned OFF and the back button will re-appear. A fix for this HTML and PHP issue would be nice if someone knows a solution Iv\'e tried.<br><br><b>If you really need to Preview your emails before sending them, use the Preview Button located on the WYSIWYG Editor.<br><HR>');
+define('TEXT_EMAIL_BUTTON_HTML', '<p><HR><b><font color="red">HTML is currently Disabled!</b></font><br><br>If you want to send HTML email, Enable WYSIWYG Editor for Email in: Admin-->Configuration-->WYSIWYG Editor-->Options<br>');
+
+/var/www/html/loaded/admin/includes/languages/english/auction_product_mapping.php <=> /var/www/html/loaded/admin/includes/languages/german/auction_product_mapping.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/english/auction_product_mapping.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/german/auction_product_mapping.php:
+define('HEADING_DESCRIPTION', 'Geben Sie den Titel der Auktionslisting ein und w&auml;hlen Sie das dazugeh&ouml;rige Produkt aus osCommerce aus. Dieses wird w&auml;hrend des &Uuml;bergangs von Auktion zur Kasse in osCommerce zugeordnet.'
+define('ENTRY_AUCTION_TITLE', 'Auktionstitel:');
+define('ENTRY_AUCTION_HOUSE', 'Auktionshaus:');
+define('ENTRY_PRODUCT', 'Produkt:');
+define('ENTRY_APPROVED', 'Best&auml;tigen?');
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/auction_product_mapping.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/auction_product_mapping.php:
+define('HEADING_AUCTION_HOUSE', 'Auction House');
+define('HEADING_AUCTION_PRODUCT', 'Product');
+define('HEADING_AUCTION_TITLE', 'Auction Title');
+define('TABLE_HEADING_ACTION', 'Action');
+define('TEXT_INFO_HEADING_DELETE_ITEMS', 'Delete&nbsp;mapping?');
+define('TEXT_INFO_DELETE_ITEMS', 'This will affect %s item(s).  Are you certain you wish to DELETE these items?');
+define('TEXT_INFO_HEADING_APPROVE', 'Approve Mappings?');
+define('TEXT_INFO_APPROVE', 'This will affect %s item(s).');
+
+
+/var/www/html/loaded/admin/includes/languages/english/edit_orders.php <=> /var/www/html/loaded/admin/includes/languages/german/edit_orders.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/edit_orders.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/edit_orders.php:
+define('EMAIL_TEXT_PRODUCTS', 'Products');
+define('EMAIL_TEXT_DELIVERY_ADDRESS', 'Delivery Address');
+define('EMAIL_TEXT_BILLING_ADDRESS', 'Billing Address');
+define('ENTRY_CREDIT_CARD_CVN', 'CVN:');
+define('TEXT_ADD_A_NEW_PRODUCT', 'Add new product');
+define('TEXT_CALCULATE_TOTALS', 'recalculate totals:');
+define('HEADING_TITLE_SEARCH_PRODUCTS','Search:');
+define('TEXT_PRODUCT','Product:');
+define('TEXT_APPLY_FILTER','Product listing is too large. Please use the search facility');
+define('TEXT_QUANTITY', 'Quantity:');
+define('TEXT_OPTIONS', 'Options:');
+
+/var/www/html/loaded/admin/includes/languages/english/orders.php <=> /var/www/html/loaded/admin/includes/languages/german/orders.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/orders.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/orders.php:
+define('TEXT_INFO_DELETE_DATA', 'Customers Name  ');
+define('TEXT_INFO_DELETE_DATA_OID', 'Order Number  ');
+define('TEXT_ADMIN', 'Manager:');
+define('TEXT_CUSTOMER_ADMIN', 'Customer sales person:');
+define('ENTRY_CVN_NUMBER', 'CVN:');
+
+/var/www/html/loaded/admin/includes/languages/english/coupon_admin.php <=> /var/www/html/loaded/admin/includes/languages/german/coupon_admin.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/coupon_admin.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/coupon_admin.php:
+define('TEXT_EMAIL_BUTTON_TEXT', '<p><HR><b><font color="red">The Back Button has been DISABLE while HTML WYSIWG Editor is turned ON,</b></font> WHY? - Because if you click the back button to edit your HTML email, The PHP (php.ini - "Magic Quotes = On") will automatically add "\\\\\\\" backslashes everywhere Double Quotes " appear (HTML uses them in Links, Images and More) and this destorts the HTML and the pictures will dissapear once you submit the email again, If you turn OFF WYSIWYG Editor in Admin the HTML Ability of osCommerce is also turned OFF and the back button will re-appear. A fix for this HTML and PHP issue would be nice if someone knows a solution Iv\'e tried.<br><br><b>If you really need to Preview your emails before sending them, use the Preview Button located on the WYSIWYG Editor.<br><HR>');
+define('TEXT_EMAIL_BUTTON_HTML', '<p><HR><b><font color="red">HTML is currently Disabled!</b></font><br><br>If you want to send HTML email, Enable WYSIWYG Editor for Email in: Admin-->Configuration-->WYSIWYG Editor-->Options<br>');
+
+/var/www/html/loaded/admin/includes/languages/english/categories.php <=> /var/www/html/loaded/admin/includes/languages/german/categories.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/categories.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/categories.php:
+		
+define('TEXT_PRODUCTS_IMAGE_NOTE','<b>Products Image:</b><small><br>Main Image used in<br><u>catalog & description</u> page.<small>');
+define('TEXT_PRODUCTS_IMAGE_MEDIUM', '<b>Bigger Image:</b><br><small>REPLACES Small Image on<br><u>products description</u> page.</small>');
+define('TEXT_PRODUCTS_IMAGE_LARGE', '<b>Pop-up Image:</b><br><small>REPLACES Small Image on<br><u>pop-up window</u> page.</small>');
+define('TEXT_PRODUCTS_IMAGE_LINKED', '<u>Store Product/s Sharring this Image =</u>');
+define('TEXT_PRODUCTS_IMAGE_REMOVE', '<b>Remove</b> this Image from this Product?');
+define('TEXT_PRODUCTS_IMAGE_DELETE', '<b>Delete</b> this Image from the Server (Permanent!)?');
+define('TEXT_PRODUCTS_IMAGE_REMOVE_SHORT', 'Remove');
+define('TEXT_PRODUCTS_IMAGE_DELETE_SHORT', 'Delete');
+define('TEXT_PRODUCTS_IMAGE_TH_NOTICE', '<b>SM = Small Images,</b> if a "SM" image is used<br>(Alone) NO Pop-up window link is created, the "SM"<br>(small image) will be placed directly under the products<br>description. if used inconjunction with a<br>"XL" image on the right, A Pop-up Window Link<br> is created and the "XL" image will be<br>shown in a Pop-up window.<br><br>');
+define('TEXT_PRODUCTS_IMAGE_XL_NOTICE', '<b>XL = Large Images,</b> Used for the Pop-up image<br><br><br>');
+define('TEXT_PRODUCTS_IMAGE_ADDITIONAL', 'More Addition Images - These will appear below product description if used.');
+define('TEXT_PRODUCTS_IMAGE_SM_1', 'SM Image 1:');
+define('TEXT_PRODUCTS_IMAGE_XL_1', 'XL Image 1:');
+define('TEXT_PRODUCTS_IMAGE_SM_2', 'SM Image 2:');
+define('TEXT_PRODUCTS_IMAGE_XL_2', 'XL Image 2:');
+define('TEXT_PRODUCTS_IMAGE_SM_3', 'SM Image 3:');
+define('TEXT_PRODUCTS_IMAGE_XL_3', 'XL Image 3:');
+define('TEXT_PRODUCTS_IMAGE_SM_4', 'SM Image 4:');
+define('TEXT_PRODUCTS_IMAGE_XL_4', 'XL Image 4:');
+define('TEXT_PRODUCTS_IMAGE_SM_5', 'SM Image 5:');
+define('TEXT_PRODUCTS_IMAGE_XL_5', 'XL Image 5:');
+define('TEXT_PRODUCTS_IMAGE_SM_6', 'SM Image 6:');
+define('TEXT_PRODUCTS_IMAGE_XL_6', 'XL Image 6:');
+define('TEXT_DELETE_IMAGE', 'Delete Image');
+define('TEXT_EDIT_CATEGORIES_HEADING_TITLE', 'Category heading title:');
+define('TEXT_EDIT_CATEGORIES_DESCRIPTION', 'Category heading Description:');
+define('TEXT_NONE', '--none--');
+define('TEXT_PRODUCTS_PAGE_TITLE', 'Products Page Title:');
+define('TEXT_PRODUCTS_HEADER_DESCRIPTION', 'Page Header Description:');
+define('TEXT_PRODUCTS_KEYWORDS', 'Product Keywords:');
+
+/var/www/html/loaded/admin/includes/languages/english/template_configuration.php <=> /var/www/html/loaded/admin/includes/languages/german/template_configuration.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/english/template_configuration.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/german/template_configuration.php:
+define('TEXT_PRODUCTS', 'Products:');
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/template_configuration.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/template_configuration.php:
+define('TEXT_ALLOW_CATEGORY_DESCRIPTIONS', 'Allow category descriptions');
+define('TEXT_HEADER', '<b>Header</b>');
+define('TEXT_INCLUDE_CART_IN_HEADER', 'Include Cart in Header');
+define('TEXT_INCLUDE_HEADER_LINK_BUTTONS', 'Include Header Link Buttons');
+define('TEXT_INCLUDE_LANGUAGES_IN_HEADER', 'Include languages in Header');
+define('TEXT_INCLUDE_MAIN_TABLE_BORDER', 'Include main table border');
+define('TEXT_INFO_EDIT_INTRO', 'Please make any necessary changes');
+define('TEXT_INFOBOX_BORDER_WIDTH_LEFT', 'Infobox left border image width');
+define('TEXT_INFOBOX_BORDER_WIDTH_RIGHT', 'Infobox right border image width');
+define('TEXT_LEFT_COLUMN', '<b>Left column</b>');
+define('TEXT_RIGHT_COLUMN', '<b>Right column</b>');
+define('TEXT_YES', 'yes');
+define('TEXT_NO', 'no');
+define('TEXT_MOVE_RIGHT', 'move to the right column');
+define('TEXT_MOVE_LEFT', 'Move to the left column');
+define('TEXT_SHOW_CUSTOMER_GREETING', 'Show customer greeting?');
+define('TEXT_SHOW_ORIGINAL_PAGE_HEADERS', 'Show Mainpage Headers?');
+define('TEXT_TABLE_CELL_PADDING', '<b>Table cellpadding</b>');
+define('TEXT_OTHER', '<b>Other</b>');
+define('TEXT_MAINPAGE_MODULES', '<b>Select Modules for Mainpage</b>');
+
+/var/www/html/loaded/admin/includes/languages/english/affiliate_affiliates.php <=> /var/www/html/loaded/admin/includes/languages/german/affiliate_affiliates.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/affiliate_affiliates.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/affiliate_affiliates.php:
+define('TEXT_STATUS','Status:');
+define('TEXT_ACTIVE','Active');
+define('TEXT_NOT_ACTIVE','Not Active');
+
+/var/www/html/loaded/admin/includes/languages/english/mail.php <=> /var/www/html/loaded/admin/includes/languages/german/mail.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/mail.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/mail.php:
+define('TEXT_EMAIL_BUTTON_TEXT', '<p><HR><b><font color="red">The Back Button has been DISABLE while HTML WYSIWG Editor is turned ON,</b></font> WHY? - Because if you click the back button to edit your HTML email, The PHP (php.ini - "Magic Quotes = On") will automatically add "\\\\\\\" backslashes everywhere Double Quotes " appear (HTML uses them in Links, Images and More) and this destorts the HTML and the pictures will dissapear once you submit the email again, If you turn OFF WYSIWYG Editor in Admin the HTML Ability of osCommerce is also turned OFF and the back button will re-appear. A fix for this HTML and PHP issue would be nice if someone knows a solution Iv\'e tried.<br><br><b>If you really need to Preview your emails before sending them, use the Preview Button located on the WYSIWYG Editor.<br><HR>');
+define('TEXT_EMAIL_BUTTON_HTML', '<p><HR><b><font color="red">HTML is currently Disabled!</b></font><br><br>If you want to send HTML email, Enable WYSIWYG Editor for Email in: Admin-->Configuration-->WYSIWYG Editor-->Options<br>');
+
+/var/www/html/loaded/admin/includes/languages/english/customers.php <=> /var/www/html/loaded/admin/includes/languages/german/customers.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/customers.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/customers.php:
+define('ENTRY_ALT_TELEPHONE_NUMBER', 'Alt. Telephone Number:');
+define('ENTRY_CELL', 'Cell Number:');
+define('ENTRY_ALT_TELEPHONE_NUMBER_ERROR', '&nbsp;<span class="errorText">min ' . ENTRY_TELEPHONE_MIN_LENGTH . ' chars</span>');
+define('ENTRY_CELL_NUMBER_ERROR', '&nbsp;<span class="errorText">min ' . ENTRY_TELEPHONE_MIN_LENGTH . ' chars</span>');
+define('ENTRY_BONUS_POINTS','Bonus points:');
+define('ENTRY_CREDIT_AVAIL','Credit available:');
+define('TEXT_INFO_OWC_MEMBER','OnlineWorld Club Member: ');
+define('ENTRY_OWC_MEMBER','OnlineWorld Club Member:');
+define('ENTRY_CUSTOMERS_TYPE','Customers Type:');
+define('SEARCH_TITLE_LAST_NAME','Last Name:');
+define('SEARCH_TITLE_FIRST_NAME','First Name:');
+define('SEARCH_TITLE_COMPANY','Company:');
+define('SEARCH_TITLE_TELEPHONE_NUMBER','Telephone Number:');
+define('SEARCH_TITLE_CITY','City:');
+define('SEARCH_TITLE_STATE','State:');
+define('SEARCH_TITLE_POSTAL_CODE','Postal Code:');
+define('SEARCH_TITLE_CARD','Last 4-Digit of Credit Card:');
+define('BOX_CATALOG_DISCOUNTS','Wholesale Discounts');
+
+/var/www/html/loaded/admin/includes/languages/english/index.php <=> /var/www/html/loaded/admin/includes/languages/german/index.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/index.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/index.php:
+define('BOX_ENTRY_OSCDOX', 'OSCdox.com');
+
+/var/www/html/loaded/admin/includes/languages/english/affiliate_invoice.php <=> /var/www/html/loaded/admin/includes/languages/german/affiliate_invoice.php
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/english/affiliate_invoice.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/german/affiliate_invoice.php:
+define('TEXT_AFFILIATE', 'Partner');
+define('TEXT_AFFILIATE_PAYMENT', 'Provisionszahlung');
+define('TEXT_AFFILIATE_BILLED', 'Abrechnungsdatum');
+
+	Missing lines in /var/www/html/loaded/admin/includes/languages/german/affiliate_invoice.php. Line numbers relative to /var/www/html/loaded/admin/includes/languages/english/affiliate_invoice.php:
+define('TABLE_HEADING_TOTAL', 'Total');
+

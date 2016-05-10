@@ -1,0 +1,61 @@
+/* CSS Document */
+
+.table-wrapper {
+	margin:20px 0px;
+	border:1px #ccc solid;
+	padding:15px;
+}
+
+	.table td.seperator span {
+		height:1px;
+		display:block;
+		background-color:#ccc;
+		width:100%;
+		margin:20px 0px;
+	}
+	
+	.table .checkbox {
+		float:left;
+		border:1px #000 solid;
+		display:inline-block;
+		width:40x;
+	}
+	
+	.table .checkbox-text {
+		width:370px;
+		border:1px #000 solid;
+		display:inline-block;
+	}
+	
+	.table table {
+		margin-bottom:15px;
+	}
+	
+	.table input[type='text'], .table textarea, table select {
+		width:370px !important;
+		margin-bottom:8px;
+		border:1px #ccc solid;
+	}
+	
+	.buttons .button-skip, 
+	.buttons .submit {
+		width:150px;
+	}
+	
+	.buttons .button-skip {
+		float:left;		
+	}
+	
+	.buttons .submit {
+		float:right;
+	}
+	
+	.page-heading .button-skip.button-grey {
+		margin-left:20px;
+		width:100px;
+		height:35px;
+		line-height:35px;
+		margin-top:-2px;
+		font-weight:normal;
+	}
+		

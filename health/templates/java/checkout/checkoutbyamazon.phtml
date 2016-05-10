@@ -1,0 +1,51 @@
+<script type="text/javascript">
+
+	CheckoutAmazonClass = function() {
+		var self = this;
+		
+		self.get_address = function(purchaseContractId) {
+			$.post("https://www.healthcare4all.co.uk/checkoutbyamazon/src/CheckoutByAmazon/Service/Samples/GetAddress.php", {
+						purchaseContractId: purchaseContractId
+					},
+					function(result){
+						var address = JSON.parse(result);												
+						var NameArray = address.Name.split(" ");
+						if (address.AddressLineOne == null) address.AddressLineOne = "Amazon Null";
+						if (address.AddressLineTwo == null) address.AddressLineTwo = "Amazon Null";
+						
+						
+						/* Populate the address fields */
+						$("input[name='firstname']").val(NameArray[0]);
+						$("input[name='lastname']").val(NameArray[1]);
+						$("input[name='street_address_line1']").val(address.AddressLineOne);
+						$("input[name='street_address_line2']").val(address.AddressLineTwo);
+						$("input[name='postcode']").val(address.PostalCode);
+						$("input[name='city']").val(address.City);
+						$("input[name='state']").val(address.StateOrProvinceCode);						
+						
+						var option = $("select[name='country']").find("option[rel-isocode='"+address.CountryCode+"']");
+						$("select[name='ship_country']").val(option.val());
+						$("select[name='ship_country']").trigger("change");
+
+						/* Populate the Shipping fields */						
+						$("input[name='ship_firstname']").val(NameArray[0]);
+						$("input[name='ship_lastname']").val(NameArray[1]);
+						$("input[name='ship_street_address_line1']").val(address.AddressLineOne);
+						$("input[name='ship_street_address_line2']").val(address.AddressLineTwo);
+						$("input[name='ship_postcode']").val(address.PostalCode);
+						$("input[name='ship_city']").val(address.City);
+						$("input[name='ship_state']").val(address.StateOrProvinceCode);						
+					}
+			);						
+		}
+		
+		$(".continue-amazon").click(function() {
+			$("form[name='one_page_checkout']").submit();
+		});
+		
+		self.init = function() {
+		}
+		self.init();
+	}
+
+</script>

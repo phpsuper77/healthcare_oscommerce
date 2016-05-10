@@ -1,0 +1,1 @@
+Test affiliate info

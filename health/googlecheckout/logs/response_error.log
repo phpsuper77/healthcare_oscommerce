@@ -1,0 +1,1644 @@
+
+Thu Oct 4 15:03:38 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 15:04:30 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:17:24 EEST 2007:- Failed to Get Basic Authentication Headers
+
+Thu Oct 4 16:17:54 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:18:05 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:18:06 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:18:19 EEST 2007:- Failed to Get Basic Authentication Headers
+
+Thu Oct 4 16:18:36 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:20:07 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:20:09 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:20:13 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:20:24 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:20:55 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:21:03 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:21:08 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:22:36 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:22:40 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:22:40 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:22:41 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:22:54 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:31:14 EEST 2007:- Invalid or not supported Message
+
+Thu Oct 4 16:31:46 EEST 2007:- Invalid or not supported Message
+
+Wed Nov 12 17:29:41 EET 2008:- Failed to Get Basic Authentication Headers
+
+Wed Nov 12 17:29:55 EET 2008:- Invalid Merchant Id/Key Pair
+
+Wed Nov 12 17:31:22 EET 2008:- Failed to Get Basic Authentication Headers
+
+Wed Nov 12 17:31:25 EET 2008:- Invalid Merchant Id/Key Pair
+
+Fri Dec 4 9:59:00 GMT 2009:- Failed to Get Basic Authentication Headers
+
+Fri Dec 4 9:59:31 GMT 2009:- Invalid or not supported Message
+
+Fri Dec 4 10:38:02 GMT 2009:- Duplicated NewOrderNotification #119697741153852 Cart order #7469
+
+Fri Dec 4 21:39:38 GMT 2009:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 04 Dec 2009 21:39:38 GMT
+Expires: Fri, 04 Dec 2009 21:39:38 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: S=payments_api=s0tb_zsOVkI; Path=/; Secure; HttpOnly
+Server: GFE/1.3
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="b5525d1c-fe70-4509-a3e4-97a57eb9e9ac">
+  <error-message>Order already archived</error-message>
+</error>
+
+
+
+Wed Dec 9 21:37:43 GMT 2009:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 09 Dec 2009 21:37:43 GMT
+Expires: Wed, 09 Dec 2009 21:37:43 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: S=payments_api=7c2UslnHfMw; Path=/; Secure; HttpOnly
+Server: GFE/1.3
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="07dd8f83-183f-4261-a65c-49d5f8c9eaef">
+  <error-message>Invalid state transition</error-message>
+</error>
+
+
+
+Mon Jan 11 20:35:22 GMT 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 11 Jan 2010 20:35:22 GMT
+Expires: Mon, 11 Jan 2010 20:35:22 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: S=payments_api=MDzGrpgyiT0; Path=/; Secure; HttpOnly
+Server: GFE/1.3
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="6a8e4513-0f74-414c-ac29-2068a000b27a">
+  <error-message>Invalid state transition</error-message>
+</error>
+
+
+
+Sun Feb 28 21:53:35 GMT 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Sun, 28 Feb 2010 21:53:35 GMT
+Expires: Sun, 28 Feb 2010 21:53:35 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: S=payments_api=RWY5MUo-xvQ; Path=/; Secure; HttpOnly
+Server: GSE
+X-XSS-Protection: 0
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="a3cbd4de-4e46-4ae3-ad38-d509f943e101">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Wed Mar 24 23:22:15 GMT 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 24 Mar 2010 23:22:15 GMT
+Expires: Wed, 24 Mar 2010 23:22:15 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: S=payments_api=aV6RmcNsivg; Expires=Thu, 25-Mar-2010 00:22:15 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+X-XSS-Protection: 0
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="89bb3636-09ac-4060-970d-70ccbd9acdf7">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Sun Mar 28 21:49:47 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Sun, 28 Mar 2010 20:49:47 GMT
+Expires: Sun, 28 Mar 2010 20:49:47 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: S=payments_api=gdzjz1BKEPc; Expires=Sun, 28-Mar-2010 21:49:47 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+X-XSS-Protection: 0
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="ca4ce6ed-b4b8-4762-8f35-3aa08cbb5bb4">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Fri Apr 2 22:54:07 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 02 Apr 2010 21:54:07 GMT
+Expires: Fri, 02 Apr 2010 21:54:07 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: S=payments_api=xExJ8RZPgvE; Expires=Fri, 02-Apr-2010 22:54:07 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+X-XSS-Protection: 0
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="1c8c2e63-c55a-41c7-82e4-860788343776">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Sat Apr 17 0:03:54 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 16 Apr 2010 23:03:54 GMT
+Expires: Fri, 16 Apr 2010 23:03:54 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=0PiXV3poh24; Expires=Fri, 16-Apr-2010 23:33:54 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="ebc7df6a-fe2f-4bcf-bcea-d8b0a24302d9">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Thu Apr 22 21:12:27 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 22 Apr 2010 20:12:27 GMT
+Expires: Thu, 22 Apr 2010 20:12:27 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=qahM6HGwouU; Expires=Thu, 22-Apr-2010 20:42:27 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="cdbe9191-e7c8-4f78-aa76-2589e0284666">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Tue Apr 27 22:06:07 BST 2010:- HTTP/1.1 500 Internal Server Error
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Tue, 27 Apr 2010 21:06:07 GMT
+Expires: Tue, 27 Apr 2010 21:06:07 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=KUcdf0zpAiE; Expires=Tue, 27-Apr-2010 21:36:07 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="9c5af78d-7033-4af2-a48b-79bd0f8c279c">
+  <error-message>Internal error in server</error-message>
+</error>
+
+
+
+Wed Apr 28 22:18:20 BST 2010:- HTTP/1.1 500 Internal Server Error
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 28 Apr 2010 21:18:20 GMT
+Expires: Wed, 28 Apr 2010 21:18:20 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=LzrNm9t0Vhs; Expires=Wed, 28-Apr-2010 21:48:20 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="064713dc-8549-426a-8f4e-7d05c1f4d059">
+  <error-message>Internal error in server</error-message>
+</error>
+
+
+
+Wed Jul 7 22:20:14 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 07 Jul 2010 21:20:14 GMT
+Expires: Wed, 07 Jul 2010 21:20:14 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=svcYH5gYGdIuyr6YUrjjCw; Expires=Wed, 07-Jul-2010 21:50:14 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="8f8b4937-db98-4776-9b37-0be18853ff2d">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Tue Jul 13 22:07:13 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Tue, 13 Jul 2010 21:07:13 GMT
+Expires: Tue, 13 Jul 2010 21:07:13 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=VHBGVGAxjY1kfU51XVEFbA; Expires=Tue, 13-Jul-2010 21:37:13 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="4a57dd59-31e4-4690-a46f-d9d4fda7c6e6">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Mon Aug 2 21:23:19 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 02 Aug 2010 20:24:14 GMT
+Expires: Mon, 02 Aug 2010 20:24:14 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=XqWMWNoap0LkPHroUZhipA; Expires=Mon, 02-Aug-2010 20:54:14 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="d9a18165-a099-4423-8baa-4952ec17ffb4">
+  <error-message>Invalid state transition</error-message>
+</error>
+
+
+
+Mon Aug 2 21:24:39 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 02 Aug 2010 20:25:34 GMT
+Expires: Mon, 02 Aug 2010 20:25:34 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=hf5z_XUGHUuwPyxLbZqSOQ; Expires=Mon, 02-Aug-2010 20:55:34 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="8ad2c1bb-33d3-4ba6-a558-6e4d37d4e8fc">
+  <error-message>Refund amount must be greater than zero</error-message>
+</error>
+
+
+
+Wed Sep 15 22:40:31 BST 2010:- Operation timed out after 2000 milliseconds with 0 bytes received
+
+Thu Sep 30 15:57:29 BST 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 30 Sep 2010 14:57:28 GMT
+Expires: Thu, 30 Sep 2010 14:57:28 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=dE0VrF2eTHXTT8yNi36GBA; Expires=Thu, 30-Sep-2010 15:27:28 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="36d7071e-c778-423c-bef1-1c97ab356f64">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Wed Oct 27 14:12:44 BST 2010:- Failed to Get Basic Authentication Headers
+
+Thu Oct 28 10:39:33 BST 2010:- Failed to Get Basic Authentication Headers
+
+Thu Oct 28 13:25:45 BST 2010:- Failed to Get Basic Authentication Headers
+
+Thu Oct 28 13:25:50 BST 2010:- Invalid Merchant Id/Key Pair
+
+Thu Oct 28 13:27:04 BST 2010:- Failed to Get Basic Authentication Headers
+
+Thu Oct 28 13:27:06 BST 2010:- Invalid Merchant Id/Key Pair
+
+Thu Oct 28 22:08:05 BST 2010:- Failed to Get Basic Authentication Headers
+
+Fri Oct 29 8:49:06 BST 2010:- Failed to Get Basic Authentication Headers
+
+Sat Oct 30 11:17:10 BST 2010:- name lookup timed out
+
+Sat Oct 30 11:17:12 BST 2010:- name lookup timed out
+
+Sun Oct 31 4:13:07 GMT 2010:- name lookup timed out
+
+Sun Oct 31 4:13:09 GMT 2010:- name lookup timed out
+
+Sun Oct 31 9:56:15 GMT 2010:- name lookup timed out
+
+Sun Oct 31 9:56:17 GMT 2010:- name lookup timed out
+
+Mon Nov 1 12:02:25 GMT 2010:- Failed to Get Basic Authentication Headers
+
+Wed Nov 3 22:48:52 GMT 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Wed, 03 Nov 2010 22:48:51 GMT
+Expires: Wed, 03 Nov 2010 22:48:51 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=x1_enIx3ildPzNdF6qlbVw; Expires=Wed, 03-Nov-2010 23:18:51 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="3cbe263f-3e51-4b4f-8394-b18b0d8ade77">
+  <error-message>Order already archived</error-message>
+</error>
+
+
+
+Sun Nov 7 21:22:39 GMT 2010:- HTTP/1.1 500 Internal Server Error
+Content-Type: application/xml; charset=UTF-8
+Date: Sun, 07 Nov 2010 21:22:39 GMT
+Expires: Sun, 07 Nov 2010 21:22:39 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=reuO5p8-GrQTcdBT4FSMuQ; Expires=Sun, 07-Nov-2010 21:52:39 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="c3a1faad-7db6-4074-ab81-5ac756969fd5">
+  <error-message>Internal error in server</error-message>
+</error>
+
+
+
+Mon Nov 29 13:54:42 GMT 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Mon, 29 Nov 2010 13:54:42 GMT
+Expires: Mon, 29 Nov 2010 13:54:42 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=ZYqz5SpDYZiZQpeMS5BcsQ; Expires=Mon, 29-Nov-2010 14:24:42 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="f6b9220d-c2fe-4e59-ae07-b8875a43cd59">
+  <error-message>Order already archived</error-message>
+</error>
+
+
+
+Mon Dec 20 14:18:53 GMT 2010:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Mon, 20 Dec 2010 14:18:53 GMT
+Expires: Mon, 20 Dec 2010 14:18:53 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=kDFbk553s67NPJWVbFduYQ; Expires=Mon, 20-Dec-2010 14:48:53 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="cafd8928-5bfa-4978-b872-118f93724d56">
+  <error-message>Invalid state transition</error-message>
+</error>
+
+
+
+Tue Jan 4 21:52:52 GMT 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 04 Jan 2011 21:52:51 GMT
+Expires: Tue, 04 Jan 2011 21:52:51 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=bxStljWGwb5Wfo_9shxd4w; Expires=Tue, 04-Jan-2011 22:22:51 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="d8513dc3-84d2-4ee1-a144-3a91c764e192">
+  <error-message>Invalid state transition</error-message>
+</error>
+
+
+
+Tue Jan 4 21:54:57 GMT 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 04 Jan 2011 21:54:57 GMT
+Expires: Tue, 04 Jan 2011 21:54:57 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=u26oi6OOsrWLMf8jp6Uhyg; Expires=Tue, 04-Jan-2011 22:24:57 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="22defc6c-3bec-413f-a1cf-ba9082c3eb6f">
+  <error-message>Refund amount must be greater than zero</error-message>
+</error>
+
+
+
+Tue Jan 11 18:08:00 GMT 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 11 Jan 2011 18:08:00 GMT
+Expires: Tue, 11 Jan 2011 18:08:00 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=zjaIq6j1xzGF7C62P6umlA; Expires=Tue, 11-Jan-2011 18:38:00 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="d716c973-ca7d-4722-bf14-91f42ca2ead1">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Sun Feb 27 21:23:47 GMT 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Sun, 27 Feb 2011 21:23:47 GMT
+Expires: Sun, 27 Feb 2011 21:23:47 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=Nt88uELPz_Ov3ZlR_WvWRQ; Expires=Sun, 27-Feb-2011 21:53:47 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="29e9c997-145c-43cd-9645-870a06b32347">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Sun Feb 27 23:28:34 GMT 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Sun, 27 Feb 2011 23:28:34 GMT
+Expires: Sun, 27 Feb 2011 23:28:34 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=mQaw4c8ZqauDt8qdHM2THg; Expires=Sun, 27-Feb-2011 23:58:34 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="619019fb-183a-46af-a45d-698dd268ef80">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Wed Mar 30 12:58:40 BST 2011:- Duplicated NewOrderNotification #506946225662086 Cart order #12860
+
+Sun Apr 10 21:23:08 BST 2011:- name lookup timed out
+
+Sun Apr 10 21:23:10 BST 2011:- name lookup timed out
+
+Mon Apr 11 17:43:55 BST 2011:- name lookup timed out
+
+Mon Apr 11 17:43:57 BST 2011:- name lookup timed out
+
+Thu Apr 14 20:59:19 BST 2011:- name lookup timed out
+
+Thu Apr 14 20:59:21 BST 2011:- name lookup timed out
+
+Mon Apr 25 21:21:37 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Mon, 25 Apr 2011 20:21:37 GMT
+Expires: Mon, 25 Apr 2011 20:21:37 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=MzNsSFkqXel8ynkc9f-30A; Expires=Mon, 25-Apr-2011 20:51:37 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="01579832-f804-4af6-92f4-304c43c83640">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Sun May 8 22:37:14 BST 2011:- Operation timed out after 2000 milliseconds with 0 bytes received
+
+Sun May 8 22:46:31 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Sun, 08 May 2011 21:46:30 GMT
+Expires: Sun, 08 May 2011 21:46:30 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=Z_Tu3kzV1qd0gAF3jOZU7g; Expires=Sun, 08-May-2011 22:16:30 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="c70e3979-0eed-4eb5-b716-6753c3594a15">
+  <error-message>Order already archived</error-message>
+</error>
+
+
+
+Mon May 23 20:04:29 BST 2011:- Operation timed out after 2000 milliseconds with 0 bytes received
+
+Sun Jun 12 21:57:18 BST 2011:- Operation timed out after 2000 milliseconds with 0 bytes received
+
+Sun Jun 12 21:57:20 BST 2011:- Operation timed out after 2000 milliseconds with 0 bytes received
+
+Wed Jun 15 22:57:08 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Wed, 15 Jun 2011 21:57:08 GMT
+Expires: Wed, 15 Jun 2011 21:57:08 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=r9y_5HwJ11js6BffAsnIvA; Expires=Wed, 15-Jun-2011 22:27:08 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="0773bae2-ea33-4677-b3f5-aeb2ac8f107a">
+  <error-message>Invalid state transition</error-message>
+</error>
+
+
+
+Wed Jun 15 23:10:46 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Wed, 15 Jun 2011 22:10:46 GMT
+Expires: Wed, 15 Jun 2011 22:10:46 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=W9ZI3IRWUCA0K060KStYRQ; Expires=Wed, 15-Jun-2011 22:40:46 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="e3b3b948-c66c-4353-835e-5413796678cf">
+  <error-message>Refund amount must be greater than zero</error-message>
+</error>
+
+
+
+Tue Jul 12 22:04:03 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 12 Jul 2011 21:04:03 GMT
+Expires: Tue, 12 Jul 2011 21:04:03 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=L_x6_uwYnz4a-iLHXo2mBw; Expires=Tue, 12-Jul-2011 21:34:03 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="30c378db-8a38-4189-9242-27e3ab662810">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Sun Jul 17 13:50:17 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Sun, 17 Jul 2011 12:50:17 GMT
+Expires: Sun, 17 Jul 2011 12:50:17 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=ryZVaBU4POtAzxdfGEdgGQ; Expires=Sun, 17-Jul-2011 13:20:17 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="be6006a0-e115-4c28-ad9f-2e41e0b7a5f9">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Thu Sep 8 9:06:14 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Thu, 08 Sep 2011 08:06:14 GMT
+Expires: Thu, 08 Sep 2011 08:06:14 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=m_LSa7DY3-slD4pPbwE9XA; Expires=Thu, 08-Sep-2011 08:36:14 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="37deda15-98af-4ca2-b652-fd16055979ea">
+  <error-message>Order already archived</error-message>
+</error>
+
+
+
+Wed Sep 14 22:44:33 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Wed, 14 Sep 2011 21:44:33 GMT
+Expires: Wed, 14 Sep 2011 21:44:33 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=0nwGWG2jnaxQgEVvaN64NQ; Expires=Wed, 14-Sep-2011 22:14:33 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="6679e92d-834d-41a0-b910-1d1aa24f70d3">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Wed Sep 14 23:57:52 BST 2011:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Wed, 14 Sep 2011 22:57:52 GMT
+Expires: Wed, 14 Sep 2011 22:57:52 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=B4RzURNsNnF9ZBnM3BGz1w; Expires=Wed, 14-Sep-2011 23:27:52 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="7e1db4db-9df7-4526-9369-94d88628472b">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Tue Feb 7 17:55:45 UTC 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 07 Feb 2012 17:55:45 GMT
+Expires: Tue, 07 Feb 2012 17:55:45 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=q5aym9nVRELqe_82T3XbiQ; Expires=Tue, 07-Feb-2012 18:25:45 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="c4ee9472-c8e8-4498-b80b-a6315e20795f">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Wed Feb 8 14:31:35 GMT 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Wed, 08 Feb 2012 14:31:35 GMT
+Expires: Wed, 08 Feb 2012 14:31:35 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=51V68tVLSNI_wmALIr03SA; Expires=Wed, 08-Feb-2012 15:01:35 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="ab925885-12f2-432d-bc31-f9aaea9ef25b">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Mon Mar 5 9:30:26 GMT 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Mon, 05 Mar 2012 09:30:26 GMT
+Expires: Mon, 05 Mar 2012 09:30:26 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=SpeIzQck5eSpVEVwgo2kZg; Expires=Mon, 05-Mar-2012 10:00:26 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="b7311227-7ec8-4eaa-b199-53c63effe02a">
+  <error-message>Order already archived</error-message>
+</error>
+
+
+
+Tue Mar 6 15:54:10 UTC 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 06 Mar 2012 15:54:09 GMT
+Expires: Tue, 06 Mar 2012 15:54:09 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=pHF5eFwyA_4rQrVRScoH2A; Expires=Tue, 06-Mar-2012 16:24:09 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="18627238-3ea9-4c82-b34a-ab77609ace6a">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Wed Mar 7 0:59:00 GMT 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Wed, 07 Mar 2012 00:59:00 GMT
+Expires: Wed, 07 Mar 2012 00:59:00 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=68PawDydriIrLC0R4bcuaQ; Expires=Wed, 07-Mar-2012 01:29:00 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="807d8df6-5253-44b9-88fb-9c936d9bdd98">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Sun Jun 17 21:24:26 BST 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Sun, 17 Jun 2012 20:24:26 GMT
+Expires: Sun, 17 Jun 2012 20:24:26 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=0ZX4C_QRvkscSsQqy1Cx6w; Expires=Sun, 17-Jun-2012 20:54:26 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="79a26867-6083-4bbd-b25d-00ca053aa501">
+  <error-message>Ids are integral numbers, but you sent: </error-message>
+</error>
+
+
+
+Tue Jul 24 22:03:16 BST 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 24 Jul 2012 21:03:16 GMT
+Expires: Tue, 24 Jul 2012 21:03:16 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=vetyZsQC5lIXyS6xG3rJyw; Expires=Tue, 24-Jul-2012 21:33:16 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="aae97705-a93d-4187-83b5-4fbb417205f3">
+  <error-message>Malformed URL component: expected id: (\d{10})|(\d{15}), but got MODULE_PAYMENT_GOOGLECHECKOUT_MERCHANTID</error-message>
+</error>
+
+
+
+Tue Jul 24 22:03:17 BST 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 24 Jul 2012 21:03:17 GMT
+Expires: Tue, 24 Jul 2012 21:03:17 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=IogjNY1Fx5XbAJzYDxT4oA; Expires=Tue, 24-Jul-2012 21:33:17 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="26e0d28b-4bee-4fa7-9c2a-9ea5a2b0421d">
+  <error-message>Malformed URL component: expected id: (\d{10})|(\d{15}), but got MODULE_PAYMENT_GOOGLECHECKOUT_MERCHANTID</error-message>
+</error>
+
+
+
+Tue Jul 24 22:03:40 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Jul 24 22:04:07 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Jul 24 22:05:45 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Jul 24 22:05:54 BST 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 24 Jul 2012 21:05:54 GMT
+Expires: Tue, 24 Jul 2012 21:05:54 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=jG922FHOjkQTbHJPy7k0vA; Expires=Tue, 24-Jul-2012 21:35:54 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="f4bd9750-6232-457a-b6d7-e8f80321463c">
+  <error-message>Malformed URL component: expected id: (\d{10})|(\d{15}), but got MODULE_PAYMENT_GOOGLECHECKOUT_MERCHANTID</error-message>
+</error>
+
+
+
+Tue Jul 24 22:05:54 BST 2012:- HTTP/1.1 400 Bad Request
+Content-Type: application/xml; charset=UTF-8
+Date: Tue, 24 Jul 2012 21:05:54 GMT
+Expires: Tue, 24 Jul 2012 21:05:54 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Set-Cookie: S=payments_api=15OgiIA27m-ytTeLypVvIw; Expires=Tue, 24-Jul-2012 21:35:54 GMT; Path=/; Secure; HttpOnly
+Server: GSE
+Transfer-Encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<error xmlns="http://checkout.google.com/schema/2" serial-number="73f2efaa-6d4c-441a-bd46-10cee25f9c74">
+  <error-message>Malformed URL component: expected id: (\d{10})|(\d{15}), but got MODULE_PAYMENT_GOOGLECHECKOUT_MERCHANTID</error-message>
+</error>
+
+
+
+Tue Jul 24 22:11:53 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Jul 24 22:38:39 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Jul 25 0:16:57 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Jul 25 10:34:09 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Jul 26 14:04:30 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Jul 27 15:10:55 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Jul 28 20:36:13 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Jul 29 15:03:53 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Jul 30 14:41:39 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Jul 31 19:10:42 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 1 16:04:35 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Aug 2 12:33:50 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Aug 3 7:15:20 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Aug 4 8:30:30 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Aug 5 3:19:09 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Aug 6 5:02:50 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Aug 7 3:15:56 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 8 4:12:44 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 8 4:13:17 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 8 4:15:06 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 8 4:23:07 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 8 4:57:00 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 8 6:58:12 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 8 15:46:43 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Aug 9 15:09:11 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Aug 10 10:53:11 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Aug 11 5:19:22 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Aug 12 9:28:40 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Aug 13 8:34:21 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Aug 14 11:41:34 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 15 9:44:49 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Aug 16 14:37:01 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Aug 17 11:51:28 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Aug 18 14:10:31 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Aug 19 18:24:14 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Aug 20 18:46:40 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Aug 21 12:54:12 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 22 17:06:18 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 22 17:06:45 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 22 17:09:15 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 22 17:16:14 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 22 17:47:17 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 22 20:18:26 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Aug 23 4:55:19 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Aug 24 9:28:59 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Aug 25 13:25:21 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Aug 26 10:37:59 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Aug 27 7:45:42 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Aug 28 12:47:09 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Aug 29 15:20:06 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Aug 30 10:35:55 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Aug 31 6:17:42 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Sep 1 7:28:30 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Sep 2 5:34:35 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Sep 3 1:13:13 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Sep 3 23:13:43 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Sep 4 23:20:20 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 5 23:56:50 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 5 23:57:17 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 5 23:59:20 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 6 0:07:22 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 6 0:39:27 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 6 3:15:55 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 6 12:55:12 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Sep 7 17:10:45 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Sep 8 17:22:37 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Sep 9 18:02:45 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Sep 10 15:24:09 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Sep 11 12:05:10 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 12 7:46:19 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 13 10:55:42 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Sep 14 6:47:06 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Sep 15 3:01:18 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Sep 16 2:01:44 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Sep 17 7:34:27 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Sep 18 6:02:46 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 19 3:19:46 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 19 22:52:39 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 19 22:53:15 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 19 22:55:34 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 19 23:03:02 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 19 23:32:40 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 20 1:51:19 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 20 9:17:57 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Sep 21 8:30:04 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Sep 22 11:47:52 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Sep 23 14:00:20 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Sep 24 16:24:02 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Sep 25 19:14:29 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Sep 26 20:22:48 BST 2012:- Invalid Merchant Id/Key Pair
+
+Thu Sep 27 19:58:55 BST 2012:- Invalid Merchant Id/Key Pair
+
+Fri Sep 28 22:15:04 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sat Sep 29 17:58:31 BST 2012:- Invalid Merchant Id/Key Pair
+
+Sun Sep 30 15:54:23 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Oct 1 14:40:26 BST 2012:- Invalid Merchant Id/Key Pair
+
+Tue Oct 2 13:16:26 BST 2012:- Invalid Merchant Id/Key Pair
+
+Wed Oct 3 11:06:51 BST 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 5 19:17:54 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 5 19:18:36 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 5 19:20:22 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 5 19:29:52 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 5 20:03:45 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 5 22:01:00 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Nov 6 4:47:29 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Wed Nov 7 6:25:41 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Nov 8 1:10:18 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Nov 8 19:46:24 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Fri Nov 9 16:54:11 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sat Nov 10 20:45:51 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sun Nov 11 15:25:53 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 12 13:42:59 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Nov 13 10:26:35 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Wed Nov 14 11:43:59 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Nov 15 12:02:49 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Fri Nov 16 12:55:51 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sat Nov 17 15:03:14 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sun Nov 18 10:06:28 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 19 8:53:05 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 19 8:53:37 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 19 8:55:49 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 19 9:03:45 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 19 9:30:07 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 19 12:01:02 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 19 18:32:06 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Nov 20 22:28:32 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Wed Nov 21 20:18:56 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Nov 22 22:20:11 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Fri Nov 23 23:44:47 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sat Nov 24 22:08:53 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Nov 26 2:35:07 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Nov 27 4:03:03 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Wed Nov 28 1:19:25 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Wed Nov 28 19:26:16 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Nov 29 19:21:00 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Fri Nov 30 21:43:49 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sun Dec 2 0:50:39 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Dec 3 6:39:37 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 4 8:25:33 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 4 8:26:05 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 4 8:28:14 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 4 8:37:39 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 4 9:07:13 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 4 11:22:58 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 4 20:07:51 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Dec 6 0:03:57 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Fri Dec 7 0:56:53 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sat Dec 8 5:47:35 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sun Dec 9 7:35:05 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Mon Dec 10 3:58:33 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 11 3:43:05 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Wed Dec 12 1:21:34 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Wed Dec 12 20:59:22 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Dec 13 19:55:07 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Fri Dec 14 13:56:57 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sat Dec 15 17:46:46 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Sun Dec 16 22:36:02 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Tue Dec 18 0:58:58 UTC 2012:- Invalid Merchant Id/Key Pair
+
+Thu Jan 3 1:30:15 UTC 2013:- Failed to Get Basic Authentication Headers
+
+Fri Jan 11 9:39:01 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 11 9:39:32 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 11 9:41:20 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 11 9:49:46 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 11 10:26:22 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 11 13:03:55 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 11 21:57:46 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Jan 13 0:04:18 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 14 4:59:31 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Jan 15 10:35:45 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Jan 16 13:01:40 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Jan 17 7:32:11 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 18 2:34:02 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 19 7:28:43 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Jan 20 8:24:14 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 21 5:03:07 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 21 20:15:48 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 21 20:16:17 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 21 20:18:23 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 21 20:25:17 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 21 21:01:55 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 21 23:11:43 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Jan 22 3:40:37 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Jan 22 5:46:37 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Jan 23 0:07:25 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Jan 23 9:16:14 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Jan 24 4:12:42 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Jan 24 8:12:45 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 25 3:11:31 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Jan 25 7:53:49 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 2:17:45 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 2:18:22 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 2:20:36 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 2:29:52 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 3:00:28 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 5:38:56 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 7:39:46 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Jan 26 15:45:36 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Jan 27 4:21:06 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Jan 27 10:03:31 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 28 7:27:38 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Jan 28 8:13:18 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Jan 29 11:42:01 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Jan 29 13:48:10 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Jan 30 13:08:25 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Jan 30 19:33:46 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Jan 31 16:49:33 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Jan 31 18:33:31 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Feb 1 12:42:36 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Feb 1 14:50:36 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 2 8:59:10 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 2 15:56:37 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 3 10:47:49 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 3 14:19:36 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 4 12:59:47 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 4 15:24:59 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 7:35:09 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 7:35:45 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 7:38:03 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 7:45:05 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 8:14:03 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 9:36:26 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 10:52:53 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 5 19:38:51 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 6 7:32:05 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 6 23:23:20 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 7 8:33:30 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 7 22:40:42 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Feb 8 12:00:49 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 4:11:53 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 12:33:16 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 12:33:50 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 12:35:56 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 12:44:37 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 13:15:39 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 15:42:09 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 9 22:19:07 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 10 0:30:38 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 10 23:44:53 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 11 1:32:45 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 11 21:05:21 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 11 23:19:10 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 13 0:43:38 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 13 4:51:13 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 14 1:11:36 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 14 5:43:32 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Feb 15 6:22:42 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Feb 15 6:59:23 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 16 4:45:45 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 16 9:11:02 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 17 6:31:18 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 17 8:57:39 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 18 3:15:57 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 18 6:33:41 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 19 2:42:58 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 19 5:45:00 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 2:32:28 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 2:32:56 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 2:35:14 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 2:42:25 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 3:11:11 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 5:33:49 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 5:55:04 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 20 14:40:25 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 21 8:59:13 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 21 17:18:49 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Feb 22 8:41:23 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Feb 22 17:52:33 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 23 3:13:29 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Feb 23 18:02:38 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 6:43:51 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 6:44:15 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 6:46:11 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 6:52:45 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 7:24:20 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 9:15:18 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 15:55:07 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Feb 24 17:19:11 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 25 12:35:21 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Feb 25 12:46:38 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 26 13:09:03 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Feb 26 13:34:57 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 27 17:11:56 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Feb 27 18:07:59 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 28 12:58:44 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Feb 28 13:15:25 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Mar 1 10:03:28 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Mar 1 18:20:25 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Mar 2 10:53:04 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Mar 2 23:16:27 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 3 12:10:31 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 3 23:08:33 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Mar 4 15:49:50 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Mar 4 19:16:13 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Mar 5 14:21:56 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Mar 5 18:18:05 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 6 13:16:57 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 6 13:17:34 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 6 13:19:33 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 6 13:26:18 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 6 13:57:35 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 6 14:37:55 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 6 16:22:59 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 7 1:28:49 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 7 17:53:22 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 7 22:07:17 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Mar 8 19:09:53 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Mar 8 21:46:46 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Mar 9 22:58:06 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 10 0:00:09 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 10 22:03:53 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 10 22:50:55 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 10 22:51:25 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 10 22:53:23 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 10 23:03:08 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 10 23:36:11 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Mar 11 2:12:14 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Mar 11 11:45:02 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Mar 11 20:45:54 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Mar 12 7:04:35 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Mar 12 23:41:14 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 13 3:44:22 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 13 21:23:50 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 14 3:54:19 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 14 23:17:57 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Mar 15 9:50:47 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Mar 15 17:49:15 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Mar 16 14:16:40 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Mar 16 15:12:37 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 17 15:16:00 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 17 20:08:17 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Mar 18 15:19:55 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Mon Mar 18 20:57:15 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Tue Mar 19 11:11:35 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 20 0:55:16 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Wed Mar 20 13:49:53 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 6:11:15 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 6:11:54 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 6:14:19 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 6:23:09 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 6:56:08 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 9:36:10 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 17:59:32 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Thu Mar 21 18:52:48 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Fri Mar 22 13:15:47 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sat Mar 23 10:40:31 UTC 2013:- Invalid Merchant Id/Key Pair
+
+Sun Mar 24 13:19:38 UTC 2013:- Invalid Merchant Id/Key Pair

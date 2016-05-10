@@ -1,0 +1,19 @@
+<script src="/java/plugins/flexslider/jquery.flexslider.js"></script>
+<!-- Place in the <head>, after the three links -->
+<script type="text/javascript" charset="utf-8">
+	IndexClass = function() {
+		var self = this;
+		
+		self.init = function() {
+		    $('.flexslider').flexslider({
+				"touch":false
+			});
+		};
+		self.init();
+	}
+
+
+$(window).load(function() {
+	var index = new IndexClass();
+});
+</script>

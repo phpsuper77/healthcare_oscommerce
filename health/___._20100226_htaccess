@@ -1,0 +1,85 @@
+# $Id: .htaccess,v 1.1.1.1 2005/12/03 21:36:01 max Exp $
+#
+# This is used with Apache WebServers
+#
+# The following makes adjustments to the SSL protocol for Internet
+# Explorer browsers
+#
+# For this to work, you must include the parameter 'Limit' to the
+# AllowOverride configuration
+#
+# Example:
+#
+#<Directory "/usr/local/apache/htdocs">
+#  AllowOverride Limit
+#</Directory>
+#
+# 'All' with also work. (This configuration is in your
+# apache/conf/httpd.conf file)
+
+<IfModule mod_setenvif.c>
+  <IfDefine SSL>
+    SetEnvIf User-Agent ".*MSIE.*" \
+             nokeepalive ssl-unclean-shutdown \
+             downgrade-1.0 force-response-1.0
+  </IfDefine>
+</IfModule>
+
+
+############ Rewrite Engine ##############
+Options +FollowSymLinks
+
+RewriteEngine On
+
+php_value register_globals On
+php_flag display_errors On
+php_flag log_errors On
+
+############ Old SEO Rules ###############
+
+RewriteRule ^(.*)-p-(.*).html$ product_info.php?products_id=$2&%{QUERY_STRING}
+RewriteRule ^(.*)-c-(.*).html$ index.php?cPath=$2&%{QUERY_STRING}
+RewriteRule ^(.*)-m-(.*).html$ index.php?manufacturers_id=$2&%{QUERY_STRING}
+RewriteRule ^(.*)-pi-(.*).html$ popup_image.php?pID=$2&%{QUERY_STRING}
+RewriteRule ^(.*)-pr-(.*).html$ product_reviews.php?products_id=$2&%{QUERY_STRING}
+RewriteRule ^(.*)-pri-(.*).html$ product_reviews_info.php?products_id=$2&%{QUERY_STRING}
+
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^privacy\.php$ info/Privacy+Policy.html [L]
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^T&C\.php$ info/Terms+And+Conditions.html [L]
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^faq\.php$ info/Faq.html [L]
+
+############ Rewrite Rules ###############
+
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^vat_exempt_form\.pdf$ vat_exempt_form.php [L]
+
+
+RewriteRule .*\.svn/.* - [F]
+
+# index page with lang code
+RewriteCond %{REQUEST_FILENAME}       !-d
+RewriteRule ^([a-z]{2})/?$ index.php?language=$1&%{QUERY_STRING} [L]
+
+# PHP pages with lang code
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^([a-z]{2})/([_a-z\d]+\.php/?.*)$ $2?language=$1&%{QUERY_STRING} [L]
+
+# information page
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^([a-z]?[a-z]?/?info/.+)\.html?$ information.php?info_name=$1&%{QUERY_STRING} [L]
+
+# products info page
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^(.+)\.html$ product_info.php?product_def=$1&%{QUERY_STRING} [L]
+
+# categories path
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^(.+)\.htm$ index.php?cPath_name=$1&%{QUERY_STRING} [L]
+
+# categories path
+RewriteCond %{REQUEST_FILENAME}       !-d
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteRule ^(.+)/?$ index.php?cPath_name=$1&%{QUERY_STRING} [L]

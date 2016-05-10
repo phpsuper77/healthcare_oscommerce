@@ -1,0 +1,17 @@
+/* CSS Document */
+
+.contact {
+}
+
+	.contact .address {
+		width:200px;
+		font-size:14px;
+		border:1px #f1f1f1 solid;
+		padding:20px;
+		background-color:#fafafa;
+	}
+	
+	.contact .map {
+		border:1px #000 solid;
+		width:300px;
+	}

@@ -1,0 +1,145 @@
+<?php
+/*
+  $Id: shopping_cart.php,v 1.1.1.1 2005/12/03 21:36:13 max Exp $
+  $Id: shopping_cart.php,v 1.1.1.1 2005/12/03 21:36:13 max Exp $
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2003 osCommerce
+
+  Released under the GNU General Public License
+
+  Shoppe Enhancement Controller - Copyright (c) 2003 WebMakers.com
+  Linda McGrath - osCommerce@WebMakers.com
+*/
+?>
+<!-- shopping_cart //-->
+          <tr>
+            <td class="infoBoxCell cart">
+<?php
+  if (is_file(DIR_FS_CATALOG . '/' . DIR_WS_TEMPLATE_IMAGES . 'infoboxheading/' . $infobox_id . '_' . $languages_id . '.jpg')){
+    $info_box_contents = array();
+    $info_box_contents[] = array('text'  => tep_image(DIR_WS_TEMPLATE_IMAGES . 'infoboxheading/' . $infobox_id . '_' . $languages_id . '.jpg'));
+    new infoBoxImageHeading($info_box_contents, tep_href_link(FILENAME_SHOPPING_CART));
+  }else{
+    $info_box_contents = array();
+    $info_box_contents[] = array('text'  => BOX_HEADING_SHOPPING_CART);
+    $infoboox_class_heading = $infobox_class . 'Heading';
+    if (class_exists($infoboox_class_heading)){
+      new $infoboox_class_heading($info_box_contents, false, false, tep_href_link(FILENAME_SHOPPING_CART));
+    }else{
+      new infoBoxHeading($info_box_contents, false, false, tep_href_link(FILENAME_SHOPPING_CART));
+    }       
+  }
+
+  $cart_contents_string = '';
+  if ($cart->count_contents() > 0) {
+    $cart_contents_string = '<table border="0" width="100%" cellspacing="0" cellpadding="0">';
+    $products = $cart->get_products();
+    for ($i=0, $n=sizeof($products); $i<$n; $i++) {
+      $cart_contents_string .= '<tr><td align="right" valign="top" class="infoBoxContents">';
+
+      if ((tep_session_is_registered('new_products_id_in_cart')) && ($new_products_id_in_cart == $products[$i]['id'])) {
+        $cart_contents_string .= '<span class="newItemInCart">';
+      } else {
+        $cart_contents_string .= '<span class="infoBoxContents">';
+      }
+
+      $cart_contents_string .= $products[$i]['quantity'] . '&nbsp;x&nbsp;</span></td><td valign="top" class="infoBoxContents"><a class="infoBoxLink" href="' . tep_href_link(FILENAME_PRODUCT_INFO, 'products_id=' . $products[$i]['id']) . '">';
+
+      if ((tep_session_is_registered('new_products_id_in_cart')) && ($new_products_id_in_cart == $products[$i]['id'])) {
+        $cart_contents_string .= '<span class="newItemInCart">';
+      } else {
+        $cart_contents_string .= '<span class="infoBoxContents">';
+      }
+
+      $cart_contents_string .= $products[$i]['name'] . '</span></a></td></tr>';
+
+      if ((tep_session_is_registered('new_products_id_in_cart')) && ($new_products_id_in_cart == $products[$i]['id'])) {
+        tep_session_unregister('new_products_id_in_cart');
+      }
+    }
+    $cart_contents_string .= '</table>';
+  } else {
+    $cart_contents_string .= '
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>' . BOX_SHOPPING_CART_EMPTY . '</td>
+  </tr>
+  <tr>
+    <td class="productPriceCell" style="padding:5px 0">' . TEXT_TOTAL . '<span class="productPriceCurrent">'.$currencies->format(0).'</span></td>
+  </tr>
+  <tr>
+    <td><a href="' . tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . HEADER_TITLE_CHECKOUT . '</a></td>
+  </tr>
+</table>
+
+    ';
+  }
+
+  $info_box_contents = array();
+  $info_box_contents[] = array('text' => $cart_contents_string);
+  if ($cart->count_contents() > 0) {
+    // WebMakers.com Added: Shoppe Enhancement Controller
+    // check for free order
+    $final_total=$cart->show_total();
+    if ($final_total==0) {
+      $final_total='Free';
+    } else {
+      $final_total=$currencies->format($cart->show_total());
+    }
+//    $info_box_contents[] = array('text' => tep_draw_separator());
+    $info_box_contents[] = array('params' => 'class="productPriceCell" style="padding:5px 0"',
+                                 'text' => TEXT_TOTAL . '<span class="productPriceCurrent">' . $final_total . '</span>');
+    $info_box_contents[] = array('params' => '',
+                                 'text' => '<a href="' . tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . HEADER_TITLE_CHECKOUT . '</a><br><a href="' . tep_href_link(FILENAME_SHOPPING_CART) . '" title="' . TEXT_SHOW_CONTENTS_OF_MY_CART . '">' . TEXT_SHOW_CONTENTS_OF_MY_CART . '</a>');
+  }
+// ICW ADDED FOR CREDIT CLASS GV
+  if (tep_session_is_registered('customer_id')) {
+    $gv_query = tep_db_query("select amount from " . TABLE_COUPON_GV_CUSTOMER . " where customer_id = '" . (int)$customer_id . "'");
+    $gv_result = tep_db_fetch_array($gv_query);
+    if ($gv_result['amount'] > 0 ) {
+      $info_box_contents[] = array('align' => 'left','text' => tep_draw_separator());
+      $info_box_contents[] = array('align' => 'left','text' => '<table cellpadding="0" width="100%" cellspacing="0" border="0"><tr><td class="smalltext">' . VOUCHER_BALANCE . '</td><td class="smalltext" align="right" valign="bottom">' . $currencies->format($gv_result['amount']) . '</td></tr></table>');
+      $info_box_contents[] = array('align' => 'left','text' => '<table cellpadding="0" width="100%" cellspacing="0" border="0"><tr><td class="smalltext"><a class="infoBoxLink" href="'. tep_href_link(FILENAME_GV_SEND) . '">' . BOX_SEND_TO_FRIEND . '</a></td></tr></table>');
+    }
+  }
+  if (tep_session_is_registered('gv_id')) {
+    $gv_query = tep_db_query("select coupon_amount from " . TABLE_COUPONS . " where coupon_id = '" . (int)$gv_id . "'");
+    $coupon = tep_db_fetch_array($gv_query);
+    $info_box_contents[] = array('align' => 'left','text' => tep_draw_separator());
+    $info_box_contents[] = array('align' => 'left','text' => '<table cellpadding="0" width="100%" cellspacing="0" border="0"><tr><td class="smalltext">' . VOUCHER_REDEEMED . '</td><td class="smalltext" align="right" valign="bottom">' . $currencies->format($coupon['coupon_amount']) . '</td></tr></table>');
+
+  }
+  if (tep_session_is_registered('cc_id') && $cc_id) {
+    $info_box_contents[] = array('align' => 'left','text' => tep_draw_separator());
+    $info_box_contents[] = array('align' => 'left','text' => '<table cellpadding="0" width="100%" cellspacing="0" border="0"><tr><td class="smalltext">' . CART_COUPON . '</td><td class="smalltext" align="right" valign="bottom">' . '<a class="infoBoxLink" href="javascript:couponpopupWindow(\'' . tep_href_link(FILENAME_POPUP_COUPON_HELP, 'cID=' . $cc_id) . '\')">' . CART_COUPON_INFO . '</a>' . '</td></tr></table>');
+
+  }
+
+// ADDED FOR CREDIT CLASS GV END ADDITTION
+
+    if (class_exists($infobox_class)){
+      new $infobox_class($info_box_contents);
+    }else{
+      new infoBox($info_box_contents);
+    }
+?>
+            </td>
+          </tr>
+<!-- shopping_cart_eof //-->
+<!--<tr>
+	<td>		
+		<div class="feedburner right-box">
+			<span class="title">Subscribe</span><br />
+			<form style="border:0px solid #ccc;padding:3px;text-align:center;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=Healthcare4allBlog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+				<strong>Enter your email address for the latest offers and news:</strong><br />
+				<input type="text" style="width:140px" name="email"/>
+				<input type="hidden" value="Healthcare4allBlog" name="uri"/>
+				<input type="hidden" name="loc" value="en_US"/>
+				<input type="submit" value="Subscribe" />
+			</form>			
+		</div>
+	</td>
+</tr>-->

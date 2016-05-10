@@ -1,0 +1,10 @@
+<?php
+$merchantID='AJO56SWKSCWXN';
+$accessKey='AKIAJ5XSHYUH3IYNIFJQ';
+$secretKey='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';
+//$cbaServiceURL='https://payments-sandbox.amazon.co.uk/cba/api/purchasecontract/'; 
+$cbaServiceURL='https://payments.amazon.co.uk/cba/api/purchasecontract/';
+$currencyCode='GBP';
+$weightUnit='g';
+$version='2010-08-31';
+?>
